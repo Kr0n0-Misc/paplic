@@ -4,6 +4,8 @@
  */
 package modelomvc;
 
+import entidades.EntidadGeo;
+
 public interface IMapaRepresentarEntidad {
     public boolean representar ( EntidadGeo entidad);
 }

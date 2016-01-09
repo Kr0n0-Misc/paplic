@@ -4,6 +4,7 @@
  */
 package modelomvc;
 
+import entidades.EntidadGeo;
 import java.awt.Color;
 import java.awt.Graphics2D;
 import java.awt.Image;
