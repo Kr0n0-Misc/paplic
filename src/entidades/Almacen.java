@@ -1,59 +1,35 @@
 package entidades;
 
 /**
- * Entidad Cliente
+ * Entidad Almacen
  * 
  * Formato fichero : 
- *  IDC:DNI:NOMBRE:APELLIDOS:CALLE:NUMERO:COD_POSTAL:POBLACION:PROVINCIA:TELEFONO
+ *  IDA:CALLE:NUMERO:COD_POSTAL:TELEFONO:MUNICIPIO:PROVINCIA
  * 
  * @author Kr0n0
  * 
  */
 
-public class Cliente extends EntidadGeo {
-    private String sIDCliente, sDNI, sNombre, sApellidos, sCalle, sNum, sCodPost, sPoblacion, sProvincia, sTelf;
-    
+public class Almacen extends EntidadGeo {
+   private String sIDAlmacen, sCalle, sNum, sCodPost, sTelf, sPoblacion, sProvincia;
+    //TODO ¿Poblacion es lo mismo que Municipio?
+   
     /******************************************
     /  Constructor
     *******************************************/
-    public Cliente() {
+    public Almacen() {
         super();
     }
    
     /******************************************
     /  Getters y Setters para los atributos
-     *******************************************/
-    
-    public String getsIDCliente() {
-        return sIDCliente;
-    }
-    
-    public void setsIDCliente(String sIDCliente) {
-        this.sIDCliente = sIDCliente;
+    *******************************************/
+    public String getsIDAlmacen() {
+        return sIDAlmacen;
     }
 
-    public String getsDNI() {
-        return sDNI;
-    }
-
-    public void setsDNI(String sDNI) {
-        this.sDNI = sDNI;
-    }
-
-    public String getsNombre() {
-        return sNombre;
-    }
-
-    public void setsNombre(String sNombre) {
-        this.sNombre = sNombre;
-    }
-
-    public String getsApellidos() {
-        return sApellidos;
-    }
-
-    public void setsApellidos(String sApellidos) {
-        this.sApellidos = sApellidos;
+    public void setsIDAlmacen(String sIDAlmacen) {
+        this.sIDAlmacen = sIDAlmacen;
     }
 
     public String getsCalle() {
@@ -80,6 +56,14 @@ public class Cliente extends EntidadGeo {
         this.sCodPost = sCodPost;
     }
 
+    public String getsTelf() {
+        return sTelf;
+    }
+
+    public void setsTelf(String sTelf) {
+        this.sTelf = sTelf;
+    }
+
     public String getsPoblacion() {
         return sPoblacion;
     }
@@ -95,13 +79,5 @@ public class Cliente extends EntidadGeo {
     public void setsProvincia(String sProvincia) {
         this.sProvincia = sProvincia;
     }
-
-    public String getsTelf() {
-        return sTelf;
-    }
-
-    public void setsTelf(String sTelf) {
-        this.sTelf = sTelf;
-    }
-
+   
 }

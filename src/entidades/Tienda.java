@@ -12,13 +12,25 @@ package entidades;
 
 public class Tienda extends EntidadGeo {
     private String sIDTienda, sCalle, sNum, sCodPost, sTelf, sPoblacion, sProvincia;
-    //TODO Datos Almacen
+    private Almacen aAlmacen;
 
     /******************************************
     /  Constructor
     *******************************************/
     public Tienda() {
         super();
+    }
+    
+    /*************************************************
+    /  Getters y Setters para las clases dependientes
+   **************************************************/
+    
+    public Almacen getaAlmacen() {
+        return aAlmacen;
+    }
+
+    public void setaAlmacen(Almacen aAlmacen) {
+        this.aAlmacen = aAlmacen;
     }
     
     /******************************************
@@ -78,8 +90,6 @@ public class Tienda extends EntidadGeo {
 
     public void setsProvincia(String sProvincia) {
         this.sProvincia = sProvincia;
-    }
-    
-    
+    }    
     
 }
