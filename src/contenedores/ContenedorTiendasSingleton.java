@@ -88,16 +88,16 @@ public class ContenedorTiendasSingleton {
      */
     public Tienda getTienda(String id) {
         Iterator<Tienda> i;
-        Tienda tiAux;
+        Tienda tienda;
         
         // Creamos iterador para ir iterando por la LinkedList
         i = llTiendas.iterator();
         // Mientras que haya elementos
         while (i.hasNext()) {
             // Recuperamos el artículo 
-            tiAux = (Tienda) i.next();
+            tienda = (Tienda) i.next();
             // Si el ID es igual que el que buscamos, lo devolvemos
-            if (id.equalsIgnoreCase(tiAux.getsIDTienda())) return tiAux;
+            if (id.equalsIgnoreCase(tienda.getsIDTienda())) return tienda;
         }
         // Si no, devolvemos null
         return (null);
@@ -121,23 +121,23 @@ public class ContenedorTiendasSingleton {
     
     public void dbgContenedorTiendasSingleton() {
         Iterator<Tienda> i;
-        Tienda tiAux;
+        Tienda tienda;
         
         // Creamos iterador para ir iterando por la LinkedList
         i = llTiendas.iterator();
         // Mientras que haya elementos
         while (i.hasNext()) {
             // Recuperamos la tienda 
-             tiAux = (Tienda) i.next();
+             tienda = (Tienda) i.next();
             // Imprimimos los datos de la tienda en System.out
             System.out.println("\n");
-            System.out.println("IDTienda : " + tiAux.getsIDTienda() 
-                    + "\nCalle : " + tiAux.getsCalle() 
-                    + "\nNum : " + tiAux.getsNum() 
-                    + "\nCodPost : " + tiAux.getsCodPost() 
-                    + "\nTelf : " + tiAux.getsTelf() 
-                    + "\nPoblacion : " + tiAux.getsPoblacion() 
-                    + "\nProvincia : " + tiAux.getsProvincia()
+            System.out.println("IDTienda : " + tienda.getsIDTienda() 
+                    + "\nCalle : " + tienda.getsCalle() 
+                    + "\nNum : " + tienda.getsNum() 
+                    + "\nCodPost : " + tienda.getsCodPost() 
+                    + "\nTelf : " + tienda.getsTelf() 
+                    + "\nPoblacion : " + tienda.getsPoblacion() 
+                    + "\nProvincia : " + tienda.getsProvincia()
             + "\n");
         }
     }

@@ -88,16 +88,16 @@ public class ContenedorAlmacenesSingleton {
      */
     public Almacen getAlmacen(String id) {
         Iterator<Almacen> i;
-        Almacen alAux;
+        Almacen almacen;
         
         // Creamos iterador para ir iterando por la LinkedList
         i = llAlmacenes.iterator();
         // Mientras que haya elementos
         while (i.hasNext()) {
             // Recuperamos el artículo 
-            alAux = (Almacen) i.next();
+            almacen = (Almacen) i.next();
             // Si el ID es igual que el que buscamos, lo devolvemos
-            if (id.equalsIgnoreCase(alAux.getsIDAlmacen())) return alAux;
+            if (id.equalsIgnoreCase(almacen.getsIDAlmacen())) return almacen;
         }
         // Si no, devolvemos null
         return (null);
@@ -120,23 +120,23 @@ public class ContenedorAlmacenesSingleton {
     
     public void dbgContenedorAlmacenesSingleton() {
         Iterator<Almacen> i;
-        Almacen alAux;
+        Almacen almacen;
         
         // Creamos iterador para ir iterando por la LinkedList
         i = llAlmacenes.iterator();
         // Mientras que haya elementos
         while (i.hasNext()) {
             // Recuperamos el almacen 
-            alAux = (Almacen) i.next();
+            almacen = (Almacen) i.next();
             // Imprimimos los datos del almacen en System.out
             System.out.println("\n");
-            System.out.println("IDAlmacen : " + alAux.getsIDAlmacen() 
-                    + "\nCalle : " + alAux.getsCalle() 
-                    + "\nNum : " + alAux.getsNum() 
-                    + "\nCodPost : " + alAux.getsCodPost() 
-                    + "\nTelf : " + alAux.getsTelf() 
-                    + "\nPoblacion : " + alAux.getsPoblacion() 
-                    + "\nProvincia : " + alAux.getsProvincia()
+            System.out.println("IDAlmacen : " + almacen.getsIDAlmacen() 
+                    + "\nCalle : " + almacen.getsCalle() 
+                    + "\nNum : " + almacen.getsNum() 
+                    + "\nCodPost : " + almacen.getsCodPost() 
+                    + "\nTelf : " + almacen.getsTelf() 
+                    + "\nPoblacion : " + almacen.getsPoblacion() 
+                    + "\nProvincia : " + almacen.getsProvincia()
             + "\n");
         }
     }

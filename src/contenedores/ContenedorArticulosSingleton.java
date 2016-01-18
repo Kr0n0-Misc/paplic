@@ -88,16 +88,16 @@ public class ContenedorArticulosSingleton {
      */
     public Articulo getArticulo(String id) {
         Iterator<Articulo> i;
-        Articulo arAux;
+        Articulo articulo;
         
         // Creamos iterador para ir iterando por la LinkedList
         i = llArticulos.iterator();
         // Mientras que haya elementos
         while (i.hasNext()) {
             // Recuperamos el artículo 
-            arAux = (Articulo) i.next();
+            articulo = (Articulo) i.next();
             // Si el ID es igual que el que buscamos, lo devolvemos
-            if (id.equalsIgnoreCase(arAux.getsIDArticulo())) return arAux;
+            if (id.equalsIgnoreCase(articulo.getsIDArticulo())) return articulo;
         }
         // Si no, devolvemos null
         return (null);
@@ -121,21 +121,21 @@ public class ContenedorArticulosSingleton {
     
     public void dbgContenedorArticulosSingleton() {
         Iterator<Articulo> i;
-        Articulo arAux;
+        Articulo articulo;
         
         // Creamos iterador para ir iterando por la LinkedList
         i = llArticulos.iterator();
         // Mientras que haya elementos
         while (i.hasNext()) {
             // Recuperamos el artículo 
-            arAux = (Articulo) i.next();
+            articulo = (Articulo) i.next();
             // Imprimimos los datos del artículo en System.out
             System.out.println("\n");
-            System.out.println("IDArticulo : " + arAux.getsIDArticulo() 
-                    + "\nCategoria : " + arAux.getsCategoria() 
-                    + "\nPrecio : " + arAux.getsPrecio() 
-                    + "\nFichaTecnica : " + arAux.getsFichaTecnica() 
-                    + "\nDescripcion : " + arAux.getsDescripcion()
+            System.out.println("IDArticulo : " + articulo.getsIDArticulo() 
+                    + "\nCategoria : " + articulo.getsCategoria() 
+                    + "\nPrecio : " + articulo.getsPrecio() 
+                    + "\nFichaTecnica : " + articulo.getsFichaTecnica() 
+                    + "\nDescripcion : " + articulo.getsDescripcion()
             + "\n");
         }
     }

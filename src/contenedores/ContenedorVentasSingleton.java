@@ -88,16 +88,16 @@ public class ContenedorVentasSingleton {
      */
     public Venta getVenta(String id) {
         Iterator<Venta> i;
-        Venta veAux;
+        Venta venta;
         
         // Creamos iterador para ir iterando por la LinkedList
         i = llVentas.iterator();
         // Mientras que haya elementos
         while (i.hasNext()) {
             // Recuperamos la venta 
-            veAux = (Venta) i.next();
+            venta = (Venta) i.next();
             // Si el ID es igual que el que buscamos, lo devolvemos
-            if (id.equalsIgnoreCase(veAux.getsIDVenta())) return veAux;
+            if (id.equalsIgnoreCase(venta.getsIDVenta())) return venta;
         }
         // Si no, devolvemos null
         return (null);
@@ -120,24 +120,24 @@ public class ContenedorVentasSingleton {
     
     public void dbgContenedorVentasSingleton() {
         Iterator<Venta> i;
-        Venta veAux;
+        Venta venta;
         
         // Creamos iterador para ir iterando por la LinkedList
         i = llVentas.iterator();
         // Mientras que haya elementos
         while (i.hasNext()) {
             // Recuperamos la venta 
-             veAux = (Venta) i.next();
+             venta = (Venta) i.next();
             // Imprimimos los datos de la venta en System.out
             // NOTA : Los datos de Cliente, Almacen y Tienda los recogemos de los objetos dependientes
             System.out.println("\n");
-            System.out.println("IDVenta : " + veAux.getsIDVenta() 
-                    + "\nIDCliente : " + veAux.getcCliente().getsIDCliente() 
-                    + "\nIDAlmacen : " + veAux.getaAlmacen().getsIDAlmacen() 
-                    + "\nIDTienda : " + veAux.gettTienda().getsIDTienda() 
-                    + "\nUnidades : " + veAux.getsUnidades() 
-                    + "\nImporte : " + veAux.getsImporte() 
-                    + "\nFecha : " + veAux.getsFecha()
+            System.out.println("IDVenta : " + venta.getsIDVenta() 
+                    + "\nIDCliente : " + venta.getcCliente().getsIDCliente() 
+                    + "\nIDAlmacen : " + venta.getaAlmacen().getsIDAlmacen() 
+                    + "\nIDTienda : " + venta.gettTienda().getsIDTienda() 
+                    + "\nUnidades : " + venta.getsUnidades() 
+                    + "\nImporte : " + venta.getsImporte() 
+                    + "\nFecha : " + venta.getsFecha()
             + "\n");
         }
     }

@@ -88,16 +88,16 @@ public class ContenedorPromocionesSingleton {
      */
     public Promocion getPromocion(String id) {
         Iterator<Promocion> i;
-        Promocion prAux;
+        Promocion promocion;
         
         // Creamos iterador para ir iterando por la LinkedList
         i = llPromociones.iterator();
         // Mientras que haya elementos
         while (i.hasNext()) {
             // Recuperamos el artículo 
-            prAux = (Promocion) i.next();
+            promocion = (Promocion) i.next();
             // Si el ID es igual que el que buscamos, lo devolvemos
-            if (id.equalsIgnoreCase(prAux.getsIDPromocion())) return prAux;
+            if (id.equalsIgnoreCase(promocion.getsIDPromocion())) return promocion;
         }
         // Si no, devolvemos null
         return (null);
@@ -120,18 +120,18 @@ public class ContenedorPromocionesSingleton {
     
     public void dbgContenedorPromocionesSingleton() {
         Iterator<Promocion> i;
-        Promocion prAux;
+        Promocion promocion;
         
         // Creamos iterador para ir iterando por la LinkedList
         i = llPromociones.iterator();
         // Mientras que haya elementos
         while (i.hasNext()) {
             // Recuperamos la promoción 
-            prAux = (Promocion) i.next();
+            promocion = (Promocion) i.next();
             // Imprimimos los datos de la promoción en System.out
             System.out.println("\n");
-            System.out.println("IDPromocion : " + prAux.getsIDPromocion() 
-                    + "\nDescuento : " + prAux.getsDescuento()
+            System.out.println("IDPromocion : " + promocion.getsIDPromocion() 
+                    + "\nDescuento : " + promocion.getsDescuento()
             + "\n");
         }
     }

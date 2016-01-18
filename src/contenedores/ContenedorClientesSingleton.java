@@ -90,16 +90,16 @@ public class ContenedorClientesSingleton {
      */
     public Cliente getCliente(String id) {
         Iterator<Cliente> i;
-        Cliente clAux;
+        Cliente cliente;
         
         // Creamos iterador para ir iterando por la LinkedList
         i = llClientes.iterator();
         // Mientras que haya elementos
         while (i.hasNext()) {
             // Recuperamos el cliente 
-            clAux = (Cliente) i.next();
+            cliente = (Cliente) i.next();
             // Si el ID es igual que el que buscamos, lo devolvemos
-            if (id.equalsIgnoreCase(clAux.getsIDCliente())) return clAux;
+            if (id.equalsIgnoreCase(cliente.getsIDCliente())) return cliente;
         }
         // Si no, devolvemos null
         return (null);
@@ -122,26 +122,26 @@ public class ContenedorClientesSingleton {
 
     public void dbgContenedorClientesSingleton() {
         Iterator<Cliente> i;
-        Cliente clAux;
+        Cliente cliente;
         
         // Creamos iterador para ir iterando por la LinkedList
         i = llClientes.iterator();
         // Mientras que haya elementos
         while (i.hasNext()) {
             // Recuperamos el cliente 
-            clAux = (Cliente) i.next();
+            cliente = (Cliente) i.next();
             // Imprimimos los datos del cliente en System.out
             System.out.println("\n");
-            System.out.println("IDCliente : " + clAux.getsIDCliente() 
-                    + "\nDNI : " + clAux.getsDNI() 
-                    + "\nNombre : " + clAux.getsNombre() 
-                    + "\nApellidos : " + clAux.getsApellidos() 
-                    + "\nCalle : " + clAux.getsCalle() 
-                    + "\nNum : " + clAux.getsNum() 
-                    + "\nCodPost : " + clAux.getsCodPost() 
-                    + "\nPoblacion : " + clAux.getsPoblacion() 
-                    + "\nProvincia : " + clAux.getsProvincia() 
-                    + "\nTeléfono : "+clAux.getsTelf() 
+            System.out.println("IDCliente : " + cliente.getsIDCliente() 
+                    + "\nDNI : " + cliente.getsDNI() 
+                    + "\nNombre : " + cliente.getsNombre() 
+                    + "\nApellidos : " + cliente.getsApellidos() 
+                    + "\nCalle : " + cliente.getsCalle() 
+                    + "\nNum : " + cliente.getsNum() 
+                    + "\nCodPost : " + cliente.getsCodPost() 
+                    + "\nPoblacion : " + cliente.getsPoblacion() 
+                    + "\nProvincia : " + cliente.getsProvincia() 
+                    + "\nTeléfono : "+cliente.getsTelf() 
             + "\n");
         }
     }
