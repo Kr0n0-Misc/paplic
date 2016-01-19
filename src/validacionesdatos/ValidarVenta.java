@@ -26,7 +26,7 @@ public class ValidarVenta {
      * esValido
      * 
      * @brief Valida los campos de la entidad
-     * @param promocion
+     * @param venta
      * @return 
      */
     public boolean esValido (Venta venta) {
@@ -48,7 +48,7 @@ public class ValidarVenta {
      * @return boolean
      */
     private boolean esCampoValido (String campo) {
-        return (asciiEncoder.canEncode(campo) || !campo.equals(" "));
+        return (asciiEncoder.canEncode(campo) || !campo.equals(" ") || !campo.isEmpty());
     }    
     
 }

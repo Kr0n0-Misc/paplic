@@ -132,14 +132,18 @@ public class ContenedorVentasSingleton {
             // NOTA : Los datos de Cliente, Almacen y Tienda los recogemos de los objetos dependientes
             System.out.println("\n");
             System.out.println("IDVenta : " + venta.getsIDVenta() 
+                    /**
                     + "\nIDCliente : " + venta.getcCliente().getsIDCliente() 
                     + "\nIDAlmacen : " + venta.getaAlmacen().getsIDAlmacen() 
                     + "\nIDTienda : " + venta.gettTienda().getsIDTienda() 
+                    */
+                    + "\nIDCliente : " + venta.getsIDCliente()
+                    + "\nIDAlmacen : " + venta.getsIDAlmacen()
+                    + "\nIDTienda : " + venta.getsIDTienda()
                     + "\nUnidades : " + venta.getsUnidades() 
                     + "\nImporte : " + venta.getsImporte() 
                     + "\nFecha : " + venta.getsFecha()
             + "\n");
         }
     }
-    
 }

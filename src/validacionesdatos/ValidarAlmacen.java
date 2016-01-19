@@ -51,7 +51,7 @@ public class ValidarAlmacen {
      * @return boolean
      */
     private boolean esCampoValido (String campo) {
-        return (asciiEncoder.canEncode(campo) || !campo.equals(" "));
+        return (asciiEncoder.canEncode(campo) || !campo.equals(" ") || !campo.isEmpty());
     }    
     
 }
