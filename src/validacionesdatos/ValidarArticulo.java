@@ -39,6 +39,7 @@ public class ValidarArticulo {
         return validar;
     }
     
+      
     /**
      * esCampoValido
      * 
@@ -48,19 +49,8 @@ public class ValidarArticulo {
      * @return boolean
      */
     private boolean esCampoValido (String campo) {
-        return (!isPureAscii(campo) || campo.equals(" "));
+        return (asciiEncoder.canEncode(campo) || !campo.equals(" "));
     }    
-  
-    /**
-     * isPureAscii
-     * 
-     * Comprueba si es ascii la cadena
-     * 
-     * @param v
-     * @return 
-     */
-    private static boolean isPureAscii(String v) {
-      return asciiEncoder.canEncode(v);
-    }
+    
     
 }

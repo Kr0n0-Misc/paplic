@@ -28,23 +28,6 @@ import modelomvc.ControladorCUCargaVentas;
 
 public class ControllerMVCCargaDatos implements ActionListener {
     
-    /*
-    //asociacion con la vista
-    VentanaAplicacion vistaMapa;
-    //asociacion con el modelo
-    MapaVectorialClientes mapaclientes;
-
-    
-    // Contenedores
-    ContenedorAlmacenesSingleton contenedorAlm;
-    ContenedorArticulosSingleton contenedorArt;
-    ContenedorClientesSingleton contenedorCli;
-    ContenedorTiendasSingleton contenedorTie;
-    ContenedorVentasSingleton contenedorVen;
-    ContenedorPromocionesSingleton contenedorPro;
-
-
-*/
     // Gestor de ficheros
     private JFileChooser fc;
     private FileFilter filter;
@@ -54,7 +37,7 @@ public class ControllerMVCCargaDatos implements ActionListener {
 
     
     public ControllerMVCCargaDatos(VentanaAplicacion ventana) {
-      //TODO   
+
     }
 
     @Override
