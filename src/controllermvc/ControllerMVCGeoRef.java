@@ -59,7 +59,7 @@ public class ControllerMVCGeoRef implements ActionListener {
                    // Establecemos las coordenadas en el cliente
                    cliente.setX(aCoordenadas[0]);
                    cliente.setY(aCoordenadas[1]);
-                   System.out.println("\nCliente "+cliente.getsIDCliente()+" ["+cliente.getX()+"]["+cliente.getY()+"]");
+                   System.out.println("\nCoordenadas Cliente "+cliente.getsIDCliente()+" ["+cliente.getX()+"]["+cliente.getY()+"]");
                }
                break;
                
@@ -80,7 +80,7 @@ public class ControllerMVCGeoRef implements ActionListener {
                    // Establecemos las coordenadas en el almacen
                    almacen.setX(aCoordenadas[0]);
                    almacen.setY(aCoordenadas[1]);
-                   System.out.println("\nAlmacen"+almacen.getsIDAlmacen()+" ["+almacen.getX()+"]["+almacen.getY()+"]");
+                   System.out.println("\nCoordenadas Almacen "+almacen.getsIDAlmacen()+" ["+almacen.getX()+"]["+almacen.getY()+"]");
                }
                break;
                
@@ -101,7 +101,7 @@ public class ControllerMVCGeoRef implements ActionListener {
                    // Establecemos las coordenadas en la tienda
                    tienda.setX(aCoordenadas[0]);
                    tienda.setY(aCoordenadas[1]);
-                   System.out.println("\nTienda"+tienda.getsIDTienda()+" ["+tienda.getX()+"]["+tienda.getY()+"]");
+                   System.out.println("\nCoordenadas Tienda "+tienda.getsIDTienda()+" ["+tienda.getX()+"]["+tienda.getY()+"]");
                }
                break;
        }
