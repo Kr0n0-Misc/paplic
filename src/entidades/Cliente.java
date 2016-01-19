@@ -104,4 +104,48 @@ public class Cliente extends EntidadGeo {
         this.sTelf = sTelf;
     }
 
+    /**
+     * setValoresCliente
+     * 
+     * @brief Establece los valores de los datos del cliente segun posicion
+     * @param valor
+     * @param posicion 
+     */
+    public void setValoresCliente (String valor, int posicion) {
+        switch (posicion) {
+            case 0 : //IDC
+                this.setsIDCliente(valor);
+                break;
+            case 1 : //DNI
+                this.setsDNI(valor);
+                break;
+            case 2 : //NOMBRE
+                this.setsNombre(valor);
+                break;
+            case 3 : //APELLIDOS
+                this.setsApellidos(valor);
+                break;
+            case 4 : //CALLE
+                this.setsCalle(valor);
+                break;
+            case 5 : //NUMERO
+                this.setsNum(valor);
+                break;
+            case 6 : //COD_POSTAL
+                this.setsCodPost(valor);
+                break;
+            case 7 : //POBLACION
+                this.setsPoblacion(valor);
+                break;
+            case 8 : //PROVINCIA
+                this.setsProvincia(valor);
+                break;
+            case 9 : //TELEFONO
+                this.setsTelf(valor);
+                break;
+            default:
+                System.out.println("setValoresCliente - Posicion Inválida");
+        }
+    }
+    
 }

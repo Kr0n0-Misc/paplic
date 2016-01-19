@@ -5,10 +5,25 @@
  */
 package modelomvc;
 
+import contenedores.ContenedorPromocionesSingleton;
+import validacionesdatos.ValidarPromocion;
+
 /**
  *
  * @author Kr0n0
  */
 public class ControladorCUCargaPromociones {
+    
+    
+    // Contenedor
+    private final ContenedorPromocionesSingleton contenedorPro;    
+    
+     /******************************************
+    /  Constructor
+    *******************************************/
+    public ControladorCUCargaPromociones(String ruta) {
+        contenedorPro = ContenedorPromocionesSingleton.getInstance();
+        System.out.println("modelomvc.ControladorCUCargaPromociones.<init>()");
+    }
     
 }

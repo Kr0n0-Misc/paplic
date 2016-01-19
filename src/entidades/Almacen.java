@@ -79,5 +79,41 @@ public class Almacen extends EntidadGeo {
     public void setsProvincia(String sProvincia) {
         this.sProvincia = sProvincia;
     }
-   
+    
+
+    /**
+     * setValoresAlmacen
+     * 
+     * @brief Establece los valores de los datos del almacen segun posicion
+     * @param valor
+     * @param posicion 
+     */
+    public void setValoresAlmacen (String valor, int posicion) {
+        switch (posicion) {
+            case 0 : //IDA
+                this.setsIDAlmacen(valor);
+                break;
+            case 1 : //CALLE
+                this.setsCalle(valor);
+                break;
+            case 2 : //NUMERO
+                this.setsNum(valor);
+                break;
+            case 3 : //COD_POSTAL
+                this.setsCodPost(valor);
+                break;
+            case 4 : //TELEFONO
+                this.setsTelf(valor);
+                break;
+            case 5 : //POBLACION
+                this.setsPoblacion(valor);
+                break;
+            case 6 : //PROVINCIA
+                this.setsProvincia(valor);
+                break;
+            default:
+                System.out.println("setValoresAlmacen - Posicion Inválida");
+        }
+    }
+    
 }

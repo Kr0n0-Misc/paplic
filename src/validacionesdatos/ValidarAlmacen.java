@@ -30,6 +30,7 @@ public class ValidarAlmacen {
      * @return 
      */
     public boolean esValido (Almacen almacen) {
+        this.validar = true;
         validar = (
             esCampoValido(almacen.getsCalle()) ||
             esCampoValido(almacen.getsCodPost()) ||
@@ -50,19 +51,7 @@ public class ValidarAlmacen {
      * @return boolean
      */
     private boolean esCampoValido (String campo) {
-        return (!isPureAscii(campo) || campo.equals(" "));
+        return (asciiEncoder.canEncode(campo) || !campo.equals(" "));
     }    
-  
-    /**
-     * isPureAscii
-     * 
-     * Comprueba si es ascii la cadena
-     * 
-     * @param v
-     * @return 
-     */
-    private static boolean isPureAscii(String v) {
-      return asciiEncoder.canEncode(v);
-    }
     
 }

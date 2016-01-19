@@ -9,18 +9,18 @@ import java.nio.file.Files;
 import java.util.LinkedList;
 
 /**
- * LineaFichero
+ * RegistroFichero
  * 
  * @brief Clase para gestionar cada linea de fichero por los proveedores de datos
  * @author Kr0n0
  */
-public class LineaFichero {
+public class RegistroFichero {
     private final LinkedList<DatoFichero> llLineasDatos;
 
     /******************************************
     /  Constructor
     *******************************************/
-    public LineaFichero() {
+    public RegistroFichero() {
         llLineasDatos = new LinkedList<>();
     }
     

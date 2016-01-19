@@ -4,10 +4,11 @@
  */
 package controllermvc;
 
-import contenedores.*;
+//import contenedores.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.File;
+import java.io.IOException;
 import javax.swing.JFileChooser;
 import javax.swing.JMenuItem;
 import javax.swing.filechooser.FileFilter;
@@ -15,6 +16,14 @@ import javax.swing.filechooser.FileNameExtensionFilter;
 //import modelomvc.MapaVectorialClientes;
 import vistamvc.VentanaAplicacion;
 //import vistamvc.PanelGraficoMapa;
+
+// Controladores de Casos de Uso - Cargas
+import modelomvc.ControladorCUCargaAlmacenes;
+import modelomvc.ControladorCUCargaArticulos;
+import modelomvc.ControladorCUCargaClientes;
+import modelomvc.ControladorCUCargaPromociones;
+import modelomvc.ControladorCUCargaTiendas;
+import modelomvc.ControladorCUCargaVentas;
 
 
 public class ControllerMVCCargaDatos implements ActionListener {
@@ -24,7 +33,6 @@ public class ControllerMVCCargaDatos implements ActionListener {
     VentanaAplicacion vistaMapa;
     //asociacion con el modelo
     MapaVectorialClientes mapaclientes;
-    */
 
     
     // Contenedores
@@ -34,7 +42,9 @@ public class ControllerMVCCargaDatos implements ActionListener {
     ContenedorTiendasSingleton contenedorTie;
     ContenedorVentasSingleton contenedorVen;
     ContenedorPromocionesSingleton contenedorPro;
-    
+
+
+*/
     // Gestor de ficheros
     private JFileChooser fc;
     private FileFilter filter;
@@ -57,8 +67,6 @@ public class ControllerMVCCargaDatos implements ActionListener {
        switch (controlInterfaz.getText()) {
            case "Carga fichero Almacenes" : 
                // CARGA FICHERO ALMACENES
-               // Recogemos la instancia del singleton correspondiente
-               contenedorAlm=ContenedorAlmacenesSingleton.getInstance();
                System.out.println("[ControllerMVCCargaDatos] - Carga de fichero Almacenes");
                // Abrimos el filechooser
                filter = new FileNameExtensionFilter("Datos Almacenes (.txt)", "txt");
@@ -68,15 +76,19 @@ public class ControllerMVCCargaDatos implements ActionListener {
                resultado = fc.showOpenDialog(controlInterfaz);
                if (resultado == JFileChooser.APPROVE_OPTION) {
                    selectedFile = fc.getSelectedFile();
+                   // Cargar ControladorCUCargaAlmacenes
                    System.out.println("[ControllerMVCCargaDatos] - Fichero " + selectedFile.getAbsolutePath() + " seleccionado.");
-               }
-               
-               break;           
+                   ControladorCUCargaAlmacenes cargaAlmacenes = new ControladorCUCargaAlmacenes(selectedFile.getAbsolutePath());
+                   try {
+                       cargaAlmacenes.CargarAlmacenes();
+                   }
+                   catch (IOException excepcion) {}
+               }            
+               break;
                
            case "Carga fichero Articulos" :
                // CARGA FICHERO ARTICULOS
                // Recogemos la instancia del singleton correspondiente
-               contenedorArt=ContenedorArticulosSingleton.getInstance();
                System.out.println("[ControllerMVCCargaDatos] - Carga de fichero Articulos");
                // Abrimos el filechooser
                filter = new FileNameExtensionFilter("Datos Articulos (.txt)", "txt");
@@ -86,15 +98,17 @@ public class ControllerMVCCargaDatos implements ActionListener {
                resultado = fc.showOpenDialog(controlInterfaz);
                if (resultado == JFileChooser.APPROVE_OPTION) {
                    selectedFile = fc.getSelectedFile();
+                   // Cargar ControladorCUCargaArticulos
                    System.out.println("[ControllerMVCCargaDatos] - Fichero " + selectedFile.getAbsolutePath() + " seleccionado.");
+                   ControladorCUCargaArticulos cargaArticulos = new ControladorCUCargaArticulos(selectedFile.getAbsolutePath());
+                   // TODO Desarrollar servicio
+                   
                }
- 
                break;
 
            case "Carga fichero Clientes" :
                // CARGA FICHERO CLIENTES
                // Recogemos la instancia del singleton correspondiente
-               contenedorCli=ContenedorClientesSingleton.getInstance();
                System.out.println("[ControllerMVCCargaDatos] - Carga de fichero Clientes");
                // Abrimos el filechooser
                filter = new FileNameExtensionFilter("Datos Clientes (.txt)", "txt");
@@ -104,17 +118,19 @@ public class ControllerMVCCargaDatos implements ActionListener {
                resultado = fc.showOpenDialog(controlInterfaz);
                if (resultado == JFileChooser.APPROVE_OPTION) {
                    selectedFile = fc.getSelectedFile();
+                   // Cargar ControladorCUCargaClientes - Pasamos como parámetro el getAbsolutePath()
                    System.out.println("[ControllerMVCCargaDatos] - Fichero " + selectedFile.getAbsolutePath() + " seleccionado.");
+                   ControladorCUCargaClientes cargaClientes = new ControladorCUCargaClientes(selectedFile.getAbsolutePath());
+                   // TODO Desarrollar servicio  
+                   
                }
-                 
                break;
                
            case "Carga fichero Tiendas" :
                // CARGA FICHERO TIENDAS
                // Recogemos la instancia del singleton correspondiente
-               contenedorTie=ContenedorTiendasSingleton.getInstance();
                System.out.println("[ControllerMVCCargaDatos] - Carga de fichero Tiendas");
-                              // Abrimos el filechooser
+               // Abrimos el filechooser
                filter = new FileNameExtensionFilter("Datos Tiendas (.txt)", "txt");
                fc = new JFileChooser();
                fc.addChoosableFileFilter(filter);
@@ -122,16 +138,19 @@ public class ControllerMVCCargaDatos implements ActionListener {
                resultado = fc.showOpenDialog(controlInterfaz);
                if (resultado == JFileChooser.APPROVE_OPTION) {
                    selectedFile = fc.getSelectedFile();
+                   // Cargar ControladorCUCargaTiendas                   
                    System.out.println("[ControllerMVCCargaDatos] - Fichero " + selectedFile.getAbsolutePath() + " seleccionado.");
+                   ControladorCUCargaTiendas cargaTiendas = new ControladorCUCargaTiendas(selectedFile.getAbsolutePath());
+                   // TODO Desarrollar servicio  
+
                }
-               
                break;
+
            case "Carga fichero Ventas" :
                // CARGA FICHERO VENTAS
                // Recogemos la instancia del singleton correspondiente
-               contenedorVen=ContenedorVentasSingleton.getInstance();
                System.out.println("[ControllerMVCCargaDatos] - Carga de fichero Ventas");
-                              // Abrimos el filechooser
+               // Abrimos el filechooser
                filter = new FileNameExtensionFilter("Datos Ventas (.txt)", "txt");
                fc = new JFileChooser();
                fc.addChoosableFileFilter(filter);
@@ -139,14 +158,17 @@ public class ControllerMVCCargaDatos implements ActionListener {
                resultado = fc.showOpenDialog(controlInterfaz);
                if (resultado == JFileChooser.APPROVE_OPTION) {
                    selectedFile = fc.getSelectedFile();
+                   // Cargar ControladorCUCargaVentas
                    System.out.println("[ControllerMVCCargaDatos] - Fichero " + selectedFile.getAbsolutePath() + " seleccionado.");
-               }
-               
+                   ControladorCUCargaVentas cargaVentas = new ControladorCUCargaVentas(selectedFile.getAbsolutePath());
+                   // TODO Desarrollar servicio  
+ 
+               }            
                break;
+               
            case "Carga fichero Promociones" :
                // CARGA FICHERO PROMOCIONES
                // Recogemos la instancia del singleton correspondiente
-               contenedorPro=ContenedorPromocionesSingleton.getInstance();
                System.out.println("[ControllerMVCCargaDatos] - Carga de fichero Promociones");
                           // Abrimos el filechooser
                filter = new FileNameExtensionFilter("Datos Promociones (.txt)", "txt");
@@ -157,8 +179,11 @@ public class ControllerMVCCargaDatos implements ActionListener {
                if (resultado == JFileChooser.APPROVE_OPTION) {
                    selectedFile = fc.getSelectedFile();
                    System.out.println("[ControllerMVCCargaDatos] - Fichero " + selectedFile.getAbsolutePath() + " seleccionado.");
+                   ControladorCUCargaPromociones cargaPromociones = new ControladorCUCargaPromociones(selectedFile.getAbsolutePath());
+
+                   // Cargar ControladorCUCargaPromociones
+                   
                }
-               
                break;
        }
        

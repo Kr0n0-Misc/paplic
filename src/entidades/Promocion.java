@@ -39,4 +39,24 @@ public class Promocion extends EntidadGeo {
         this.sDescuento = sDescuento;
     }
    
+    /**
+     * setValoresPromocion
+     * 
+     * @brief Establece los valores de los datos de la promoción segun posicion
+     * @param valor
+     * @param posicion 
+     */
+    public void setValoresPromocion (String valor, int posicion) {
+        switch (posicion) {
+            case 0 : //IDP
+                this.setsIDPromocion(valor);
+                break;
+            case 1 : //DESCUENTO
+                this.setsDescuento(valor);
+                break;
+            default:
+                System.out.println("setValoresPromocion - Posicion Inválida");
+        }
+    }
+    
 }

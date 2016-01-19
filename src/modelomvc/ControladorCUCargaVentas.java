@@ -5,10 +5,25 @@
  */
 package modelomvc;
 
+import contenedores.ContenedorVentasSingleton;
+import validacionesdatos.ValidarVenta;
+
 /**
  *
  * @author Kr0n0
  */
 public class ControladorCUCargaVentas {
+    
+    
+    // Contenedor
+    private final ContenedorVentasSingleton contenedorVen;    
+    
+     /******************************************
+    /  Constructor
+    *******************************************/
+    public ControladorCUCargaVentas(String ruta) {
+        contenedorVen = ContenedorVentasSingleton.getInstance();
+        System.out.println("modelomvc.ControladorCUCargaVentas.<init>()");
+    }
     
 }
