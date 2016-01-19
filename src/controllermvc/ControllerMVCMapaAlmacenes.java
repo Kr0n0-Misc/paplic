@@ -19,7 +19,7 @@ public class ControllerMVCMapaAlmacenes implements ActionListener {
     //asociacion con la vista
     VentanaAplicacion vistaMapa;
     //asociacion con el modelo
-    MapaVectorialAlmacenes mapaalmacenes∫;
+    MapaVectorialAlmacenes mapaalmacenes;
     ContenedorAlmacenesSingleton contenedorAlm;
     // Entidades
     Almacen almacen;
@@ -49,7 +49,7 @@ public class ControllerMVCMapaAlmacenes implements ActionListener {
             
             //3.-seleccionar la vista y configurar para mostrar nuevo estado del modelo 
             PanelGraficoMapa panel_graficoMapaAlmacenes = new PanelGraficoMapa(mapaalmacenes);            
-            this.vistaMapa.setPanel(panel_graficoMapaAlmacenes∫);
+            this.vistaMapa.setPanel(panel_graficoMapaAlmacenes);
           }
     }
     }
