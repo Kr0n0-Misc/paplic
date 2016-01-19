@@ -64,6 +64,8 @@ public class ProveedorAlmacenes {
                 // Creamos un registro nuevo y un tokenizer para separar por ":"
                 registro = new RegistroFichero();
                 sTokenizer = new StringTokenizer(linea, ":");
+                // Reseteamos el indice
+                indice = 0;
                 // Mientras haya tokens en la linea
                 while (sTokenizer.hasMoreTokens()) {
                     // Recogemos el dato, lo guardamos en el registro 
