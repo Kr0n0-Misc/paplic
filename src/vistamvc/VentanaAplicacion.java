@@ -17,11 +17,13 @@ public class VentanaAplicacion extends JFrame {
         
         JMenuBar barraMenus = new JMenuBar();// control barra de menú superior
         // Creamos Controles de menus
-        JMenu menuMapas = creaControlMenuMapas();
         JMenu menuCargas = crearControlMenuCargas();
-        
+        JMenu menuGeoref = crearControlMenuGeoref();
+        JMenu menuMapas = creaControlMenuMapas();
+
         // Añadimos los controles al menu
         barraMenus.add(menuCargas);
+        barraMenus.add(menuGeoref);
         barraMenus.add(menuMapas);
         
         // Atributos de ventana
@@ -40,7 +42,7 @@ public class VentanaAplicacion extends JFrame {
      * @return JMenu
      */
     private JMenu crearControlMenuCargas() {
-        // Opciones del menu de cargaS
+        // Opciones del menu de cargas
         JMenuItem itemAlmacen = new JMenuItem("Carga fichero Almacenes");
         JMenuItem itemArticulo = new JMenuItem("Carga fichero Articulos");
         JMenuItem itemCliente = new JMenuItem("Carga fichero Clientes");
@@ -70,6 +72,24 @@ public class VentanaAplicacion extends JFrame {
         itemPromocion.addActionListener(new ControllerMVCCargaDatos(this));
         
         // Devolvemos el Menu
+        return menu;
+    }
+    
+    private JMenu crearControlMenuGeoref() {
+        // Opciones del menu de georeferencias
+        JMenuItem itemGeoClientes = new JMenuItem("Coordenadas de Clientes");
+        JMenuItem itemGeoAlmacenes = new JMenuItem("Coordenadas de Almacenes");
+        JMenuItem itemGeoTiendas = new JMenuItem("Coordenadas de Tiendas");
+
+        JMenu menu = new JMenu("GeoReferencia");
+        menu.add(itemGeoClientes);
+        menu.add(itemGeoAlmacenes);
+        menu.add(itemGeoTiendas);
+
+        itemGeoClientes.addActionListener(new ControllerMVCGeoRef(this));
+        itemGeoAlmacenes.addActionListener(new ControllerMVCGeoRef(this));
+        itemGeoTiendas.addActionListener(new ControllerMVCGeoRef(this));
+        
         return menu;
     }
     
