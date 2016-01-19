@@ -5,8 +5,10 @@
 package controllermvc;
 
 import contenedores.ContenedorClientesSingleton;
+import entidades.Cliente;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.Iterator;
 import javax.swing.JMenuItem;
 import modelomvc.MapaVectorialClientes;
 import vistamvc.VentanaAplicacion;
@@ -19,6 +21,8 @@ public class ControllerMVCMapaClientes implements ActionListener {
     //asociacion con el modelo
     MapaVectorialClientes mapaclientes;
     ContenedorClientesSingleton contenedorCli;
+    // Entidades
+    Cliente cliente;
 
     public ControllerMVCMapaClientes(VentanaAplicacion ventana) {
         //incializacion
@@ -30,15 +34,17 @@ public class ControllerMVCMapaClientes implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         
-        //1.-Actualiza el modelo en función del evento de entrada
-       
+        //1.-Actualiza el modelo en función del evento de entrada    
         JMenuItem controlInterfaz = (JMenuItem) e.getSource(); //conversión del evento producido
         if (controlInterfaz.getText().equals("Generar Mapa de Clientes")) {
-            
-            
+            Iterator itClientes;
+            itClientes = ContenedorClientesSingleton.getInstance().getClientes().iterator();
+            // Iteramos en la lista
+            while (itClientes.hasNext()) {
+            //Recogemos el objeto Cliente
+            cliente = (Cliente) itClientes.next();
+            mapaclientes.representar(cliente);
             //2.-Procesar y confifurar el mapa con la colección de figuras geometricas
-            
-           
             mapaclientes.generarGrafico(); //Generar el mapa
             
             //3.-seleccionar la vista y configurar para mostrar nuevo estado del modelo 
@@ -46,4 +52,6 @@ public class ControllerMVCMapaClientes implements ActionListener {
             this.vistaMapa.setPanel(panel_graficoMapaClientes);
           }
     }
+    }
+
 }

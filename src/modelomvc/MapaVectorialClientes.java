@@ -33,16 +33,20 @@ public class MapaVectorialClientes extends MapaVectorialBase implements IMapaRep
     @Override
     public boolean representar(EntidadGeo entidad) {
         // Crear tipo de geometría  y asignar posición (x,y)        
-        Rectangle cuadrado1 = new Rectangle(20,20, 10, 10);
+        Rectangle cuadrado1 = new Rectangle(entidad.getX(),entidad.getY(), 10, 10);
         geometrias.add(cuadrado1);
         return true;
     }
 
     @Override
     public void generarGrafico() {
-       //Por cada geometria operación draw en la coordenadas asinadas
-        
+        //Por cada geometria operación draw en la coordenadas asinadas
+        Iterator itGeometrias;
+        itGeometrias = geometrias.iterator();
+        while (itGeometrias.hasNext()) grafico2d.draw((Rectangle)itGeometrias.next());
+        /*
         Rectangle cuadrado1 = new Rectangle(20,20, 20, 20);        
         grafico2d.draw(cuadrado1);
+        */
     }
 }
