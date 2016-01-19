@@ -84,9 +84,11 @@ public class ControllerMVCCargaDatos implements ActionListener {
                    // Cargar ControladorCUCargaArticulos
                    System.out.println("[ControllerMVCCargaDatos] - Fichero " + selectedFile.getAbsolutePath() + " seleccionado.");
                    ControladorCUCargaArticulos cargaArticulos = new ControladorCUCargaArticulos(selectedFile.getAbsolutePath());
-                   // TODO Desarrollar servicio
-                   
-               }
+                   try {
+                       cargaArticulos.CargarArticulos();
+                   }
+                   catch (IOException excepcion) {}
+               }            
                break;
 
            case "Carga fichero Clientes" :
@@ -104,9 +106,11 @@ public class ControllerMVCCargaDatos implements ActionListener {
                    // Cargar ControladorCUCargaClientes - Pasamos como parámetro el getAbsolutePath()
                    System.out.println("[ControllerMVCCargaDatos] - Fichero " + selectedFile.getAbsolutePath() + " seleccionado.");
                    ControladorCUCargaClientes cargaClientes = new ControladorCUCargaClientes(selectedFile.getAbsolutePath());
-                   // TODO Desarrollar servicio  
-                   
-               }
+                   try {
+                       cargaClientes.CargarClientes();
+                   }
+                   catch (IOException excepcion) {}
+               }            
                break;
                
            case "Carga fichero Tiendas" :
@@ -124,9 +128,11 @@ public class ControllerMVCCargaDatos implements ActionListener {
                    // Cargar ControladorCUCargaTiendas                   
                    System.out.println("[ControllerMVCCargaDatos] - Fichero " + selectedFile.getAbsolutePath() + " seleccionado.");
                    ControladorCUCargaTiendas cargaTiendas = new ControladorCUCargaTiendas(selectedFile.getAbsolutePath());
-                   // TODO Desarrollar servicio  
-
-               }
+                    try {
+                       cargaTiendas.CargarTiendas();
+                   }
+                   catch (IOException excepcion) {}
+               }            
                break;
 
            case "Carga fichero Ventas" :
@@ -144,8 +150,10 @@ public class ControllerMVCCargaDatos implements ActionListener {
                    // Cargar ControladorCUCargaVentas
                    System.out.println("[ControllerMVCCargaDatos] - Fichero " + selectedFile.getAbsolutePath() + " seleccionado.");
                    ControladorCUCargaVentas cargaVentas = new ControladorCUCargaVentas(selectedFile.getAbsolutePath());
-                   // TODO Desarrollar servicio  
- 
+                   try {
+                       cargaVentas.CargarVentas();
+                   }
+                   catch (IOException excepcion) {}
                }            
                break;
                
@@ -163,10 +171,11 @@ public class ControllerMVCCargaDatos implements ActionListener {
                    selectedFile = fc.getSelectedFile();
                    System.out.println("[ControllerMVCCargaDatos] - Fichero " + selectedFile.getAbsolutePath() + " seleccionado.");
                    ControladorCUCargaPromociones cargaPromociones = new ControladorCUCargaPromociones(selectedFile.getAbsolutePath());
-
-                   // Cargar ControladorCUCargaPromociones
-                   
-               }
+                   try {
+                       cargaPromociones.CargarPromociones();
+                   }
+                   catch (IOException excepcion) {}
+               }            
                break;
        }
        
