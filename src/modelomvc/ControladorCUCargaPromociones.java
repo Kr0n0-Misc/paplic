@@ -1,27 +1,28 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package modelomvc;
 
+// Modelos y Controladores de Carga
 import contenedores.ContenedorPromocionesSingleton;
+// Entidades
 import entidades.Promocion;
 import entidades.DatoFichero;
 import entidades.RegistroFichero;
-import java.io.IOException;
+// Utilidades
 import java.util.Iterator;
 import java.util.LinkedList;
+// Entrada / Salida
+import java.io.IOException;
+// Proveedores y Validadores
 import proveeedores.ProveedorPromociones;
 import validacionesdatos.ValidarPromocion;
         
 /**
- *
+ * ControladorCUCargaPromociones
+ * 
+ * Controlador para caso de uso Cargar Promociones
+ * 
  * @author Kr0n0
  */
 public class ControladorCUCargaPromociones {
-
-    // Contenedor
     private final ContenedorPromocionesSingleton contenedorPro;    
     ProveedorPromociones proveedor;
     ValidarPromocion validador;
@@ -34,10 +35,7 @@ public class ControladorCUCargaPromociones {
     Iterator itRegistro;
     Iterator itDato;
 
-    
-     /******************************************
-    /  Constructor
-    *******************************************/
+    // CONSTRUCTOR
     public ControladorCUCargaPromociones(String ruta) {
         contenedorPro = ContenedorPromocionesSingleton.getInstance();
         proveedor = new ProveedorPromociones(ruta);
@@ -46,6 +44,9 @@ public class ControladorCUCargaPromociones {
     }
     
     /**
+     * CargarPromociones
+     * 
+     * Caso de uso Cargar Promociones
      * 
      * @throws IOException 
      */
@@ -78,7 +79,6 @@ public class ControladorCUCargaPromociones {
                     // Mostramos mensaje de almacenar
                     System.out.println("CargarPromociones - "+promocion.getsIDPromocion()+" promocion validada y guardada.");
             }
-           
         } // FIN BUCLE REGISTROS
         // Mostramos los datos del contenedor
         contenedorPro.dbgContenedorPromocionesSingleton();

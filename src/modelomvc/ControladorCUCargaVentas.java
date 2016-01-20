@@ -1,11 +1,6 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package modelomvc;
 
-// Contenedores
+// Modelos y Controladores de Carga
 import contenedores.ContenedorArticulosSingleton;
 import contenedores.ContenedorClientesSingleton;
 import contenedores.ContenedorTiendasSingleton;
@@ -17,21 +12,23 @@ import entidades.RegistroFichero;
 import entidades.Articulo;
 import entidades.Cliente;
 import entidades.Tienda;
-// Gestión de carga
-import proveeedores.ProveedorVentas;
-import validacionesdatos.ValidarVenta;
-// Generales
-import java.io.IOException;
+// Utilidades
 import java.util.Iterator;
 import java.util.LinkedList;
+// Entrada / Salida
+import java.io.IOException;
+// Proveedores y Validadores
+import proveeedores.ProveedorVentas;
+import validacionesdatos.ValidarVenta;
         
 /**
- *
+ * ControladorCUCargaVentas
+ * 
+ * Controlador para caso de uso Cargar Ventas
+ * 
  * @author Kr0n0
  */
 public class ControladorCUCargaVentas {
-
-    // Contenedores
     private final ContenedorVentasSingleton contenedorVen;
     ContenedorClientesSingleton contenedorCli;
     ContenedorArticulosSingleton contenedorArt;
@@ -47,10 +44,7 @@ public class ControladorCUCargaVentas {
     Iterator itRegistro;
     Iterator itDato;
 
-    
-     /******************************************
-    /  Constructor
-    *******************************************/
+    // CONSTRUCTOR
     public ControladorCUCargaVentas(String ruta) {
         contenedorVen = ContenedorVentasSingleton.getInstance();
         proveedor = new ProveedorVentas(ruta);
@@ -59,6 +53,9 @@ public class ControladorCUCargaVentas {
     }
     
     /**
+     * CargarVentas
+     * 
+     * Caso de uso Cargar Tiendas
      * 
      * @throws IOException 
      */

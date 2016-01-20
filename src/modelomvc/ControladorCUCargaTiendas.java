@@ -1,27 +1,28 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package modelomvc;
 
+// Modelos y Controladores de Carga
 import contenedores.ContenedorTiendasSingleton;
+// Entidades
 import entidades.Tienda;
 import entidades.DatoFichero;
 import entidades.RegistroFichero;
-import java.io.IOException;
+// Utilidades
 import java.util.Iterator;
 import java.util.LinkedList;
+// Entrada / Salida
+import java.io.IOException;
+// Proveedores y Validadores
 import proveeedores.ProveedorTiendas;
 import validacionesdatos.ValidarTienda;
         
 /**
- *
+ * ControladorCUCargaTiendas
+ * 
+ * Controlador para caso de uso Cargar Tiendas
+ * 
  * @author Kr0n0
  */
 public class ControladorCUCargaTiendas {
-
-    // Contenedor
     private final ContenedorTiendasSingleton contenedorTie;    
     ProveedorTiendas proveedor;
     ValidarTienda validador;
@@ -34,10 +35,7 @@ public class ControladorCUCargaTiendas {
     Iterator itRegistro;
     Iterator itDato;
 
-    
-     /******************************************
-    /  Constructor
-    *******************************************/
+    // CONSTRUCTOR
     public ControladorCUCargaTiendas(String ruta) {
         contenedorTie = ContenedorTiendasSingleton.getInstance();
         proveedor = new ProveedorTiendas(ruta);
@@ -46,6 +44,9 @@ public class ControladorCUCargaTiendas {
     }
     
     /**
+     * CargarTiendas
+     * 
+     * Caso de uso Cargar Tiendas
      * 
      * @throws IOException 
      */
@@ -78,7 +79,6 @@ public class ControladorCUCargaTiendas {
                     // Mostramos mensaje de almacenar
                     System.out.println("CargarTiendas - " + tienda.getsIDTienda() + " tienda validada y guardada.");
             }
-           
         } // FIN BUCLE REGISTROS
         // Mostramos los datos del contenedor
         contenedorTie.dbgContenedorTiendasSingleton();

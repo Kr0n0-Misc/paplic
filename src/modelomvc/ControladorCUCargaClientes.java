@@ -1,27 +1,28 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package modelomvc;
 
+// Modelos y Controladores de Carga
 import contenedores.ContenedorClientesSingleton;
+// Entidades
 import entidades.Cliente;
 import entidades.DatoFichero;
 import entidades.RegistroFichero;
-import java.io.IOException;
+// Utilidades
 import java.util.Iterator;
 import java.util.LinkedList;
+// Entrada/Salida
+import java.io.IOException;
+// Proveedores y Validadores
 import proveeedores.ProveedorClientes;
 import validacionesdatos.ValidarCliente;
         
 /**
+ * ControladorCUCargaClientes
  *
+ * Controlador para caso de uso Cargar Articulos
+ * 
  * @author Kr0n0
  */
 public class ControladorCUCargaClientes {
-
-    // Contenedor
     private final ContenedorClientesSingleton contenedorCli;    
     ProveedorClientes proveedor;
     ValidarCliente validador;
@@ -34,10 +35,7 @@ public class ControladorCUCargaClientes {
     Iterator itRegistro;
     Iterator itDato;
 
-    
-     /******************************************
-    /  Constructor
-    *******************************************/
+    // CONSTRUCTOR
     public ControladorCUCargaClientes(String ruta) {
         contenedorCli = ContenedorClientesSingleton.getInstance();
         proveedor = new ProveedorClientes(ruta);
@@ -46,6 +44,9 @@ public class ControladorCUCargaClientes {
     }
     
     /**
+     * CargarClientes
+     * 
+     * Caso de uso Cargar Clientes
      * 
      * @throws IOException 
      */
