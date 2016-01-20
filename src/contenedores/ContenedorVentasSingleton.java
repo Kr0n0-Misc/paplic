@@ -138,7 +138,7 @@ public class ContenedorVentasSingleton {
                     + "\nIDTienda : " + venta.gettTienda().getsIDTienda() 
                     */
                     + "\nIDCliente : " + venta.getsIDCliente()
-                    + "\nIDAlmacen : " + venta.getsIDAlmacen()
+                    + "\nIDArticulo : " + venta.getsIDArticulo()
                     + "\nIDTienda : " + venta.getsIDTienda()
                     + "\nUnidades : " + venta.getsUnidades() 
                     + "\nImporte : " + venta.getsImporte() 

@@ -15,9 +15,10 @@ public class MapaSuministro extends MapaVectorialBase implements IMapaRepresenta
     public MapaSuministro() {
         geometrias = new LinkedList();
     }
-
-    public void representar(EntidadGeo entidad1, EntidadGeo entidad2) {
+    // Cambio a boolean para adecuar al interfaz IMapaRepresentarAsociacion
+    public boolean representar(EntidadGeo entidad1, EntidadGeo entidad2) {
         // Crear tipo de geometría  y asignar posición (x,y)  
+        return true;
     }
 
     @Override

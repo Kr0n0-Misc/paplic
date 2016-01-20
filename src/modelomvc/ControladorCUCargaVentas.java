@@ -5,6 +5,9 @@
  */
 package modelomvc;
 
+import contenedores.ContenedorArticulosSingleton;
+import contenedores.ContenedorClientesSingleton;
+import contenedores.ContenedorTiendasSingleton;
 import contenedores.ContenedorVentasSingleton;
 import entidades.Venta;
 import entidades.DatoFichero;
@@ -21,8 +24,11 @@ import validacionesdatos.ValidarVenta;
  */
 public class ControladorCUCargaVentas {
 
-    // Contenedor
-    private final ContenedorVentasSingleton contenedorVen;    
+    // Contenedores
+    private final ContenedorVentasSingleton contenedorVen;
+    ContenedorClientesSingleton contenedorCli;
+    ContenedorArticulosSingleton contenedorArt;
+    ContenedorTiendasSingleton contenedorTie;
     ProveedorVentas proveedor;
     ValidarVenta validador;
     String ruta_fichero;
@@ -52,6 +58,10 @@ public class ControladorCUCargaVentas {
     public void CargarVentas() throws IOException {
         // Leemos los registros usando el proveedor de datos y lo volcamos al LinkedList
         llRegistro = proveedor.LeerRegistros(ruta_fichero);
+        // Cargamos los instancias para clientes, productos y tiendas (dependencias) 
+        contenedorCli = ContenedorClientesSingleton.getInstance();
+        contenedorArt = ContenedorArticulosSingleton.getInstance();
+        contenedorTie = ContenedorTiendasSingleton.getInstance();     
         // Asignamos el iterador al LinkedList de registros
         itRegistro = llRegistro.iterator();
         // Mientras que haya Registros en la lista

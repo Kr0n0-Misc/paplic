@@ -30,6 +30,7 @@ public class VentanaAplicacion extends JFrame {
         this.setTitle("Cuadro de mando");
         this.setSize(1200, 800); //tamaño de la ventana
         this.setBackground(Color.WHITE); // color de fondo
+        this.setLocationRelativeTo(null); // Centrada
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setJMenuBar(barraMenus);// asignar barra a control JFrame
         this.setVisible(true);// hacer visible la interfaz de ususario
@@ -77,13 +78,13 @@ public class VentanaAplicacion extends JFrame {
     
     private JMenu crearControlMenuGeoref() {
         // Opciones del menu de georeferencias
-        JMenuItem itemGeoClientes = new JMenuItem("Coordenadas de Clientes");
         JMenuItem itemGeoAlmacenes = new JMenuItem("Coordenadas de Almacenes");
+        JMenuItem itemGeoClientes = new JMenuItem("Coordenadas de Clientes");
         JMenuItem itemGeoTiendas = new JMenuItem("Coordenadas de Tiendas");
 
         JMenu menu = new JMenu("GeoReferencia");
-        menu.add(itemGeoClientes);
         menu.add(itemGeoAlmacenes);
+        menu.add(itemGeoClientes);
         menu.add(itemGeoTiendas);
 
         itemGeoClientes.addActionListener(new ControllerMVCGeoRef(this));
@@ -95,19 +96,18 @@ public class VentanaAplicacion extends JFrame {
     
     
     private JMenu creaControlMenuMapas() {
-
-        JMenuItem itemAA = new JMenuItem("Generar Mapa de Clientes");
-        JMenuItem itemAC = new JMenuItem("Generar Mapa de Almacenes");
-        JMenuItem itemAB = new JMenuItem("Generar Mapa Ventas");
+        JMenuItem itemMapaAlmacenes = new JMenuItem("Generar Mapa de Almacenes");
+        JMenuItem itemMapaClientes = new JMenuItem("Generar Mapa de Clientes");
+        JMenuItem itemMapaVentas = new JMenuItem("Generar Mapa Ventas");
 
         JMenu menu = new JMenu("Opciones de Análisis");
-        menu.add(itemAA);
-        menu.add(itemAB);
-        menu.add(itemAC);
+        menu.add(itemMapaAlmacenes);
+        menu.add(itemMapaClientes);
+        menu.add(itemMapaVentas);
 
-        itemAA.addActionListener(new ControllerMVCMapaClientes(this));
-        itemAB.addActionListener(new ControllerMVCMapaClientes(this));
-        itemAC.addActionListener(new ControllerMVCMapaClientes(this));
+        itemMapaClientes.addActionListener(new ControllerMVCMapaClientes(this));
+        itemMapaAlmacenes.addActionListener(new ControllerMVCMapaAlmacenes(this));
+        itemMapaVentas.addActionListener(new ControllerMVCMapaVentas(this));
 
         return menu;
     }
