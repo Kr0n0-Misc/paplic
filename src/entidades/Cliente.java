@@ -13,17 +13,12 @@ package entidades;
 public class Cliente extends EntidadGeo {
     private String sIDCliente, sDNI, sNombre, sApellidos, sCalle, sNum, sCodPost, sPoblacion, sProvincia, sTelf;
     
-    /******************************************
-    /  Constructor
-    *******************************************/
+    // CONSTRUCTOR
     public Cliente() {
         super();
     }
    
-    /******************************************
-    /  Getters y Setters para los atributos
-     *******************************************/
-    
+    // GETTERS Y SETTERS PARA LOS ATRIBUTOS
     public String getsIDCliente() {
         return sIDCliente;
     }
@@ -107,7 +102,7 @@ public class Cliente extends EntidadGeo {
     /**
      * setValoresCliente
      * 
-     * @brief Establece los valores de los datos del cliente segun posicion
+     * Establece los valores de los datos del cliente segun posicion
      * @param valor
      * @param posicion 
      */

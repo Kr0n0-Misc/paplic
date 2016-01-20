@@ -12,18 +12,13 @@ package entidades;
 
 public class Almacen extends EntidadGeo {
    private String sIDAlmacen, sCalle, sNum, sCodPost, sTelf, sPoblacion, sProvincia;
-    //TODO ¿Poblacion es lo mismo que Municipio?
-   
-    /******************************************
-    /  Constructor
-    *******************************************/
+    
+    // CONSTRUCTOR
     public Almacen() {
         super();
     }
    
-    /******************************************
-    /  Getters y Setters para los atributos
-    *******************************************/
+    // GETTERS Y SETTERS PARA LOS ATRIBUTOS
     public String getsIDAlmacen() {
         return sIDAlmacen;
     }
@@ -84,7 +79,7 @@ public class Almacen extends EntidadGeo {
     /**
      * setValoresAlmacen
      * 
-     * @brief Establece los valores de los datos del almacen segun posicion
+     * Establece los valores de los datos del almacen segun posicion
      * @param valor
      * @param posicion 
      */

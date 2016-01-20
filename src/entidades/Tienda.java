@@ -15,17 +15,12 @@ public class Tienda extends EntidadGeo {
     private Almacen aAlmacen;
     private String sIDAlmacen;
 
-    /******************************************
-    /  Constructor
-    *******************************************/
+    // CONSTRUCTOR
     public Tienda() {
-        //this.aAlmacen= new Almacen();
+        super();
     }
     
-    /*************************************************
-    /  Getters y Setters para las clases dependientes
-   **************************************************/
-    
+    // GETTERS Y SETTERS PARA LAS CLASES DEPENDIENTES
     public Almacen getaAlmacen() {
         return aAlmacen;
     }
@@ -42,9 +37,7 @@ public class Tienda extends EntidadGeo {
         this.sIDAlmacen = sIDAlmacen;
     }
     
-    /******************************************
-    /  Getters y Setters para los atributos
-     *******************************************/
+    // GETTERS Y SETTERS PARA LOS ATRIBUTOS
     public String getsIDTienda() {
         return sIDTienda;
     }
@@ -104,7 +97,7 @@ public class Tienda extends EntidadGeo {
     /**
      * setValoresTienda
      * 
-     * @brief Establece los valores de los datos de la tienda segun posicion
+     * Establece los valores de los datos de la tienda segun posicion
      * @param valor
      * @param posicion 
      */

@@ -13,16 +13,12 @@ package entidades;
 public class Articulo extends EntidadGeo {
     private String sIDArticulo, sCategoria, sPrecio, sFichaTecnica, sDescripcion;
     
-    /******************************************
-    /  Constructor
-    *******************************************/
+    // CONSTRUCTOR
     public Articulo() {
         super();
     }
-    
-    /******************************************
-    /  Getters y Setters para los atributos
-     *******************************************/
+   
+    // GETTERS Y SETTERS PARA LOS ATRIBUTOS
     public String getsIDArticulo() {
         return sIDArticulo;
     }
@@ -66,7 +62,7 @@ public class Articulo extends EntidadGeo {
     /**
      * setValoresArticulo
      * 
-     * @brief Establece los valores de los datos del articulo segun posicion
+     * Establece los valores de los datos del articulo segun posicion
      * @param valor
      * @param posicion 
      */

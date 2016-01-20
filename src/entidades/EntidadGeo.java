@@ -1,8 +1,13 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package entidades;
+
+/**
+ * Entidad Geo
+ * 
+ * Entidad abstracta Geo
+ * 
+ * Gestiona las coordenadas heredadas al resto de entidades
+ * 
+ */
 
 
 public class EntidadGeo {

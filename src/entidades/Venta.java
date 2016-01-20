@@ -10,7 +10,7 @@ package entidades;
  * 
  */
 
-public class Venta extends EntidadGeo {
+public final class Venta extends EntidadGeo {
    //private String sIDAlmacen, sCalle, sNum, sCodPost, sTelf, sPoblacion, sProvincia;
    private String sIDVenta, sUnidades, sImporte, sFecha;
    private Cliente cCliente;
@@ -18,13 +18,10 @@ public class Venta extends EntidadGeo {
    private Tienda tTienda;
    private String sIDCliente, sIDArticulo, sIDTienda;
 
-    /******************************************
-    /  Constructor
-    *******************************************/
+   // CONSTRUCTORES
    public Venta() {
        super();
    }
-
    // Constructor para crear Tienda, Cliente y Producto dependientes
    public Venta(Tienda tienda, Cliente cliente, Articulo articulo) {
        this.setsIDTienda(tienda.getsIDTienda());
@@ -32,9 +29,7 @@ public class Venta extends EntidadGeo {
        this.setsIDArticulo(articulo.getsIDArticulo());
    }
 
-    /*************************************************
-    /  Getters y Setters para las clases dependientes
-    **************************************************/
+   // GETTERS Y SETTERS PARA LAS CLASES DEPENDIENTES
    // CLIENTE
     public Cliente getcCliente() {
         return cCliente;
@@ -86,10 +81,7 @@ public class Venta extends EntidadGeo {
         this.sIDTienda = sIDTienda;
     }
 
-    
-    /******************************************
-    /  Getters y Setters para resto de atributos
-    *******************************************/
+    // GETTERS Y SETTERS PARA LOS ATRIBUTOS
     public String getsIDVenta() {
         return sIDVenta;
     }
@@ -125,7 +117,7 @@ public class Venta extends EntidadGeo {
     /**
      * setValoresVenta
      * 
-     * @brief Establece los valores de los datos de la venta segun posicion 
+     * Establece los valores de los datos de la venta segun posicion 
      * @param valor
      * @param posicion 
      */

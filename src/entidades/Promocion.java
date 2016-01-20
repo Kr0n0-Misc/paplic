@@ -13,16 +13,12 @@ package entidades;
 public class Promocion extends EntidadGeo {
     private String sIDPromocion, sDescuento;
 
-    /******************************************
-    /  Constructor
-    *******************************************/
+    // CONSTRUCTOR
     public Promocion() {
         super();
     }
 
-    /******************************************
-    /  Getters y Setters para los atributos
-     *******************************************/
+    // GETTERS Y SETTERS PARA LOS ATRIBUTOS
     public String getsIDPromocion() {
         return sIDPromocion;
     }
@@ -42,7 +38,7 @@ public class Promocion extends EntidadGeo {
     /**
      * setValoresPromocion
      * 
-     * @brief Establece los valores de los datos de la promoción segun posicion
+     * Establece los valores de los datos de la promoción segun posicion
      * @param valor
      * @param posicion 
      */

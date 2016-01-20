@@ -1,11 +1,5 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package entidades;
 
-import java.nio.file.Files;
 import java.util.LinkedList;
 
 /**
@@ -17,22 +11,16 @@ import java.util.LinkedList;
 public class RegistroFichero {
     private final LinkedList<DatoFichero> llLineasDatos;
 
-    /******************************************
-    /  Constructor
-    *******************************************/
+    // CONSTRUCTOR
     public RegistroFichero() {
         llLineasDatos = new LinkedList<>();
     }
     
-    
-    /******************************************
-    /  Metodos
-    *******************************************/
-    
+    // METODOS PUBLICOS
     /**
      * getLineasDatos
      * 
-     * @brief Devuelve las lineas de datos al Proveedor
+     * Devuelve las lineas de datos al Proveedor
      * @return 
      */
     public LinkedList<DatoFichero> getLineasDatos() {
@@ -42,7 +30,7 @@ public class RegistroFichero {
     /**
      * addDato
      * 
-     * @brief Añade un dato a la lista de líneas
+     * Añade un dato a la lista de líneas
      * @param dato 
      */
     public void addDato(DatoFichero dato) {

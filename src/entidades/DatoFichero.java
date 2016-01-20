@@ -1,32 +1,24 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package entidades;
 
 /**
  * DatoFichero
  * 
- * @brief Clase para gestionar cada dato dentro de una Linea de fichero.
- *        Controlamos posicion y valor para registrar en los contenedores
+ * Clase para gestionar cada dato dentro de una Linea de fichero.
+ * Controlamos posicion y valor para registrar en los contenedores
+ * 
  * @author Kr0n0
  */
 public class DatoFichero {
     private int posicion;
     private String valor;
 
-    /******************************************
-    /  Constructor
-    *******************************************/
+    // CONSTRUCTOR
     public DatoFichero(int posicion, String valor) {
         this.posicion = posicion;
         this.valor = valor;
     }
     
-    /******************************************
-    /  Getters y Setters para los atributos
-    *******************************************/
+    // GETTERS Y SETTERS PARA LOS ATRIBUTOS
     public int getPosicion() {
         return posicion;
     }
