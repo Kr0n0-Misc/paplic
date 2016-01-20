@@ -23,7 +23,8 @@ import javax.imageio.ImageIO;
 
 
 public class MapaVectorialAlmacenes extends MapaVectorialBase implements IMapaRepresentarEntidad {
-
+    Shape sAlmacen;
+    
     public MapaVectorialAlmacenes() {
         super();
         //incializar contexto de dibujo
@@ -40,11 +41,17 @@ public class MapaVectorialAlmacenes extends MapaVectorialBase implements IMapaRe
 
     @Override
     public void generarGrafico() {
+        grafico2d.setColor(Color.magenta);
         //Por cada geometria operación draw en la coordenadas asinadas
         Iterator itGeometrias;
         itGeometrias = geometrias.iterator();
-        while (itGeometrias.hasNext()) grafico2d.draw((Rectangle)itGeometrias.next());
-        /*
+        while (itGeometrias.hasNext()) {
+            // Recogemos el objeto
+            sAlmacen = (Shape)itGeometrias.next();
+            // Dibujamos y rellenamos
+            grafico2d.draw(sAlmacen);
+            grafico2d.fill(sAlmacen);
+        }        /*
         Rectangle cuadrado1 = new Rectangle(20,20, 20, 20);        
         grafico2d.draw(cuadrado1);
         */

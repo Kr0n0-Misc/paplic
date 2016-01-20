@@ -23,7 +23,8 @@ import javax.imageio.ImageIO;
 
 
 public class MapaVectorialClientes extends MapaVectorialBase implements IMapaRepresentarEntidad {
-
+    Shape sCliente;
+    
     public MapaVectorialClientes() {
         super();
         //incializar contexto de dibujo
@@ -43,7 +44,14 @@ public class MapaVectorialClientes extends MapaVectorialBase implements IMapaRep
         //Por cada geometria operación draw en la coordenadas asinadas
         Iterator itGeometrias;
         itGeometrias = geometrias.iterator();
-        while (itGeometrias.hasNext()) grafico2d.draw((Rectangle)itGeometrias.next());
+       grafico2d.setColor(Color.red);
+        while (itGeometrias.hasNext()) {
+            // Recogemos el objeto
+            sCliente = (Shape)itGeometrias.next();
+            // Dibujamos y rellenamos
+            grafico2d.draw(sCliente);
+            grafico2d.fill(sCliente);
+        }
         /*
         Rectangle cuadrado1 = new Rectangle(20,20, 20, 20);        
         grafico2d.draw(cuadrado1);
