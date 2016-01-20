@@ -11,6 +11,7 @@ import java.util.Iterator;
 import java.util.LinkedList;
 // Entrada / Salida
 import java.io.IOException;
+import javax.swing.JOptionPane;
 // Proveedores y Validadores
 import proveeedores.ProveedorPromociones;
 import validacionesdatos.ValidarPromocion;
@@ -81,6 +82,7 @@ public class ControladorCUCargaPromociones {
             }
         } // FIN BUCLE REGISTROS
         // Mostramos los datos del contenedor
+        JOptionPane.showMessageDialog (null, contenedorPro.getNumPromociones()+ " promociones cargadas", "Carga fichero Promociones", JOptionPane.INFORMATION_MESSAGE);
         contenedorPro.dbgContenedorPromocionesSingleton();
     }
 }

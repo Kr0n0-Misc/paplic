@@ -18,6 +18,7 @@ import org.geo.GeoReferenciadorFactory;
 import org.geo.IGeoReferenciador;
 // Utilidades
 import java.util.Iterator;
+import javax.swing.JOptionPane;
 
 
 
@@ -70,6 +71,7 @@ public class ControllerMVCGeoRef implements ActionListener {
                    cliente.setY(aCoordenadas[1]);
                    System.out.println("\nCoordenadas Cliente "+cliente.getsIDCliente()+" ["+cliente.getX()+"]["+cliente.getY()+"]");
                }
+               JOptionPane.showMessageDialog (null, "Coordenadas de cliente cargadas", "Coordenadas de Clientes", JOptionPane.INFORMATION_MESSAGE);
                break;
                
            // COORDENADAS DE ALMACENES
@@ -92,6 +94,7 @@ public class ControllerMVCGeoRef implements ActionListener {
                    almacen.setY(aCoordenadas[1]);
                    System.out.println("\nCoordenadas Almacen "+almacen.getsIDAlmacen()+" ["+almacen.getX()+"]["+almacen.getY()+"]");
                }
+               JOptionPane.showMessageDialog (null, "Coordenadas de almacenes cargadas", "Coordenadas de Almacenes", JOptionPane.INFORMATION_MESSAGE);
                break;
            
            // COORDENADAS DE TIENDAS
@@ -114,6 +117,7 @@ public class ControllerMVCGeoRef implements ActionListener {
                    tienda.setY(aCoordenadas[1]);
                    System.out.println("\nCoordenadas Tienda "+tienda.getsIDTienda()+" ["+tienda.getX()+"]["+tienda.getY()+"]");
                }
+               JOptionPane.showMessageDialog (null, "Coordenadas de Tiendas cargadas", "Coordenadas de Tiendas", JOptionPane.INFORMATION_MESSAGE);
                break;
        }
     }

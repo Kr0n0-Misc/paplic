@@ -17,6 +17,7 @@ import java.util.Iterator;
 import java.util.LinkedList;
 // Entrada / Salida
 import java.io.IOException;
+import javax.swing.JOptionPane;
 // Proveedores y Validadores
 import proveeedores.ProveedorVentas;
 import validacionesdatos.ValidarVenta;
@@ -116,6 +117,7 @@ public class ControladorCUCargaVentas {
            
         } // FIN BUCLE REGISTROS
         // Mostramos los datos del contenedor
+        JOptionPane.showMessageDialog (null, contenedorVen.getNumVentas()+ " ventas cargadas", "Carga fichero Ventas", JOptionPane.INFORMATION_MESSAGE);
         contenedorVen.dbgContenedorVentasSingleton();
     }
 }

@@ -11,6 +11,7 @@ import java.util.Iterator;
 import java.util.LinkedList;
 // Entrada / Salida
 import java.io.IOException;
+import javax.swing.JOptionPane;
 // Proveedores y Validadores
 import proveeedores.ProveedorTiendas;
 import validacionesdatos.ValidarTienda;
@@ -81,6 +82,7 @@ public class ControladorCUCargaTiendas {
             }
         } // FIN BUCLE REGISTROS
         // Mostramos los datos del contenedor
+        JOptionPane.showMessageDialog (null, contenedorTie.getNumTiendas()+ " tiendas cargados", "Carga fichero Tiendas", JOptionPane.INFORMATION_MESSAGE);
         contenedorTie.dbgContenedorTiendasSingleton();
     }
 }

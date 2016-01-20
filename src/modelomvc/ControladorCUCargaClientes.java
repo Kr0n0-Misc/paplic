@@ -11,6 +11,7 @@ import java.util.Iterator;
 import java.util.LinkedList;
 // Entrada/Salida
 import java.io.IOException;
+import javax.swing.JOptionPane;
 // Proveedores y Validadores
 import proveeedores.ProveedorClientes;
 import validacionesdatos.ValidarCliente;
@@ -82,6 +83,7 @@ public class ControladorCUCargaClientes {
            
         } // FIN BUCLE REGISTROS
         // Mostramos los datos del contenedor
+        JOptionPane.showMessageDialog (null, contenedorCli.getNumClientes()+ " clientes cargados", "Carga fichero Clientes", JOptionPane.INFORMATION_MESSAGE);
         contenedorCli.dbgContenedorClientesSingleton();
     }
 }
