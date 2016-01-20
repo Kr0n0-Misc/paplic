@@ -44,9 +44,12 @@ public class MapaVectorialClientes extends MapaVectorialBase implements IMapaRep
     // OVERRIDE A METODO REPRESENTAR DEL INTERFAZ IMapaRepresentarEntidad
     @Override
     public boolean representar(EntidadGeo entidad) {
-        // Crear tipo de geometría  y asignar posición (x,y)        
-        Rectangle cuadrado1 = new Rectangle(entidad.getX(),entidad.getY(), 10, 10);
-        geometrias.add(cuadrado1);
+        // Crear tipo de geometría  y asignar posición (x,y)
+        // Controlamos si los valores son devueltos por geolib con -1, si es asi no los mostramos
+        if ((entidad.getX() != -1) || (entidad.getY() != -1)) {
+            Rectangle cuadrado1 = new Rectangle(entidad.getX(),entidad.getY(), 10, 10);
+            geometrias.add(cuadrado1);
+        }
         return true;
     }
 

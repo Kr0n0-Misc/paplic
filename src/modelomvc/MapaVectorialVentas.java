@@ -58,18 +58,21 @@ public class MapaVectorialVentas extends MapaVectorialBase implements IMapaRepre
     @Override
     public boolean representar(EntidadGeo entidad, EntidadGeo entidad2) {
         // Crear tipo de geometría  y asignar posición (x,y)        
-        // Rectangulos
-        Rectangle rCliente = new Rectangle(entidad.getX(),entidad.getY(), 10, 10);
-        Rectangle rTienda = new Rectangle(entidad2.getX(), entidad2.getY(), 10, 10);
-        // Puntos
-        Point2D punto1 = new Point2D.Float(entidad.getX(), entidad.getY());
-        Point2D punto2 = new Point2D.Float(entidad2.getX(), entidad2.getY());
-        // Linea entre puntos
-        Line2D linea = new Line2D.Float(punto1,punto2);
-        // Añadimos a cada LinkedList el correspondiente
-        geometrias.add(rCliente);
-        llTiendas.add(rTienda);
-        llLineas.add(linea);        
+        // Controlamos si los valores son devueltos por geolib con -1, si es asi no los mostramos
+        if ((entidad.getX() != -1) || (entidad.getY() != -1) || (entidad2.getX() != -1) || (entidad2.getY() != -1)) {      
+            // Rectangulos
+            Rectangle rCliente = new Rectangle(entidad.getX(),entidad.getY(), 10, 10);
+            Rectangle rTienda = new Rectangle(entidad2.getX(), entidad2.getY(), 10, 10);
+            // Puntos
+            Point2D punto1 = new Point2D.Float(entidad.getX(), entidad.getY());
+            Point2D punto2 = new Point2D.Float(entidad2.getX(), entidad2.getY());
+            // Linea entre puntos
+            Line2D linea = new Line2D.Float(punto1,punto2);
+            // Añadimos a cada LinkedList el correspondiente
+            geometrias.add(rCliente);
+            llTiendas.add(rTienda);
+            llLineas.add(linea);
+        }
         return true;
     }
 

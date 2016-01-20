@@ -13,31 +13,26 @@ import modelomvc.MapaVectorialVentas;
 
 
 public class PanelGraficoMapa extends JPanel{
-    
     //asociación de sólo lectura con el modelo 
     MapaVectorialBase mapa;    
     
     // Sobrecargamos para los tres diferentes paneles que tenemos
-    
-    // Panel Clientes
+    // CLIENTES
     public PanelGraficoMapa(MapaVectorialClientes mapa){
-        
         this.mapa=mapa;   
     }
     
-    // Panel Almacenes
+    // ALMACENES
     public PanelGraficoMapa(MapaVectorialAlmacenes mapa){
-        
         this.mapa=mapa;   
     }
     
-    // Panel Ventas
+    // VENTAS
     public PanelGraficoMapa(MapaVectorialVentas mapa){
-        
         this.mapa=mapa;   
     }
     
-    
+    // OVERRIDE A METODO PAINT DE LA CLASE JPANEL
     @Override
     public void paint(Graphics g) {
          //actualizacion de la vista y acceso al modelo     
