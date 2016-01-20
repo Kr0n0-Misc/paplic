@@ -7,7 +7,7 @@ import entidades.Articulo;
 /**
  * Contenedor Artículos - Singleton
  * 
- * @brief Contenedor de artículos utilizando patrón Singleton
+ * Contenedor de artículos utilizando patrón Singleton
  * @author Kr0n0
  */
 

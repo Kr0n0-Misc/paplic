@@ -7,7 +7,7 @@ import entidades.Venta;
 /**
  * Contenedor Ventas - Singleton
  * 
- * @brief Contenedor de ventas utilizando patrón Singleton
+ * Contenedor de ventas utilizando patrón Singleton
  * @author Kr0n0
  * 
  */

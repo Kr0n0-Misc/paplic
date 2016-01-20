@@ -127,8 +127,9 @@ public class VentanaAplicacion extends JFrame {
     }
 
     /**
-     *
      * Método que permite configurar la vista y actualizarla
+     * 
+     * @param vista 
      */
     public void setPanel(PanelGraficoMapa vista) {
         this.vista = vista;

@@ -29,7 +29,7 @@ public class ValidarCliente {
     /**
      * esValido
      * 
-     * @brief Valida los campos de la entidad
+     * Valida los campos de la entidad
      * @param cliente
      * @return boolean
      */

@@ -30,7 +30,7 @@ public class ValidarTienda {
      * esValido
      * 
      * Valida los campos de la entidad
-     * @param promocion
+     * @param tienda
      * @return boolean
      */
     public boolean esValido (Tienda tienda) {

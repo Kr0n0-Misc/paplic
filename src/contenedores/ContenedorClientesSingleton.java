@@ -7,7 +7,7 @@ import entidades.Cliente;
 /**
  * Contenedor Clientes - Singleton
  * 
- * @brief Contenedor de clientes utilizando patrón Singleton
+ * Contenedor de clientes utilizando patrón Singleton
  * @author Kr0n0
  */
 

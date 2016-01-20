@@ -5,7 +5,7 @@ import java.util.LinkedList;
 /**
  * RegistroFichero
  * 
- * @brief Clase para gestionar cada linea de fichero por los proveedores de datos
+ * Clase para gestionar cada linea de fichero por los proveedores de datos
  * @author Kr0n0
  */
 public class RegistroFichero {
@@ -21,7 +21,7 @@ public class RegistroFichero {
      * getLineasDatos
      * 
      * Devuelve las lineas de datos al Proveedor
-     * @return 
+     * @return LinkedList
      */
     public LinkedList<DatoFichero> getLineasDatos() {
         return llLineasDatos;

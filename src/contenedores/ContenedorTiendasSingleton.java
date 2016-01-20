@@ -7,7 +7,7 @@ import entidades.Tienda;
 /**
  * Contenedor Tiendas - Singleton
  * 
- * @brief Contenedor de tiendas utilizando patrón Singleton
+ * Contenedor de tiendas utilizando patrón Singleton
  * @author Kr0n0
  */
 
@@ -47,7 +47,7 @@ public class ContenedorTiendasSingleton {
      /**
      * addTienda
      * 
-     * @brief Añade una tienda a la LinkedList 
+     * Añade una tienda a la LinkedList 
      * @param t Tienda
      */
     public void addTienda(Tienda t) {
