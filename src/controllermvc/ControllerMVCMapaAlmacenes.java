@@ -1,20 +1,27 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package controllermvc;
 
-import contenedores.ContenedorAlmacenesSingleton;
-import entidades.Almacen;
+// Swing, AWT y vistas
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.util.Iterator;
 import javax.swing.JMenuItem;
-import modelomvc.MapaVectorialAlmacenes;
 import vistamvc.VentanaAplicacion;
 import vistamvc.PanelGraficoMapa;
+// Modelos
+import modelomvc.MapaVectorialAlmacenes;
+// Contenedores de Entidades - Singleton
+import contenedores.ContenedorAlmacenesSingleton;
+// Entidades
+import entidades.Almacen;
+// Utilidades
+import java.util.Iterator;
 
-
+/**
+ * ControllerMVCMapaAlmacenes
+ * 
+ * Controlador MVC para crear el Mapa de Almacenes
+ * 
+ * @author Kr0n0
+ */
 public class ControllerMVCMapaAlmacenes implements ActionListener {
     //asociacion con la vista
     VentanaAplicacion vistaMapa;
@@ -24,6 +31,7 @@ public class ControllerMVCMapaAlmacenes implements ActionListener {
     // Entidades
     Almacen almacen;
 
+    // CONSTRUCTOR
     public ControllerMVCMapaAlmacenes(VentanaAplicacion ventana) {
         //incializacion
         this.vistaMapa = ventana;
@@ -31,9 +39,9 @@ public class ControllerMVCMapaAlmacenes implements ActionListener {
         contenedorAlm=ContenedorAlmacenesSingleton.getInstance();
     }
 
+    // actionPerformed - Click en opcion de menu
     @Override
     public void actionPerformed(ActionEvent e) {
-        
         //1.-Actualiza el modelo en función del evento de entrada    
         JMenuItem controlInterfaz = (JMenuItem) e.getSource(); //conversión del evento producido
         if (controlInterfaz.getText().equals("Generar Mapa de Almacenes")) {
@@ -46,12 +54,11 @@ public class ControllerMVCMapaAlmacenes implements ActionListener {
             mapaalmacenes.representar(almacen);
             //2.-Procesar y confifurar el mapa con la colección de figuras geometricas
             mapaalmacenes.generarGrafico(); //Generar el mapa
-            
             //3.-seleccionar la vista y configurar para mostrar nuevo estado del modelo 
             PanelGraficoMapa panel_graficoMapaAlmacenes = new PanelGraficoMapa(mapaalmacenes);            
             this.vistaMapa.setPanel(panel_graficoMapaAlmacenes);
           }
-    }
+        }
     }
 
 }

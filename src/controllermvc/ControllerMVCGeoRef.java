@@ -1,26 +1,31 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package controllermvc;
 
+// Swing, AWT y vistas
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import javax.swing.JMenuItem;
+import vistamvc.VentanaAplicacion;
+// Contenedores de Entidades - Singleton
 import contenedores.ContenedorClientesSingleton;
 import contenedores.ContenedorAlmacenesSingleton;
 import contenedores.ContenedorTiendasSingleton;
+// Entidades
 import entidades.Almacen;
 import entidades.Cliente;
 import entidades.Tienda;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.util.Iterator;
-import javax.swing.JMenuItem;
-import vistamvc.VentanaAplicacion;
+// Georeferencia
 import org.geo.GeoReferenciadorFactory;
 import org.geo.IGeoReferenciador;
+// Utilidades
+import java.util.Iterator;
+
 
 
 /**
+ * ControllerMVCGeoRef
+ * 
+ * Controlador MVC para Georeferencia
+ * Es comun para los diferentes ficheros, discrimina por texto del controlInterfaz
  *
  * @author Kr0n0
  */
@@ -31,10 +36,12 @@ public class ControllerMVCGeoRef implements ActionListener {
     IGeoReferenciador interfazcomp;
     int[] aCoordenadas;
     
+    // CONSTRUCTOR
     public ControllerMVCGeoRef(VentanaAplicacion ventana) {
-
+        super();
     }
     
+    // actionPerformed - Click en opcion de menu
     @Override
     public void actionPerformed(ActionEvent e) {
        //1.-Actualiza el modelo en función del evento de entrada
@@ -42,6 +49,8 @@ public class ControllerMVCGeoRef implements ActionListener {
        
         // Selector dependiendo de opcion de carga
        switch (controlInterfaz.getText()) {
+           
+           // COORDENADAS DE CLIENTES
            case "Coordenadas de Clientes" : 
                // Recogemos iterador de la LinkedList de Clientes del Singleton
                Iterator itClientes;
@@ -63,6 +72,7 @@ public class ControllerMVCGeoRef implements ActionListener {
                }
                break;
                
+           // COORDENADAS DE ALMACENES
            case "Coordenadas de Almacenes" :
                // Recogemos iterador de la LinkedList de Almacenes del Singleton
                Iterator itAlmacenes;
@@ -83,7 +93,8 @@ public class ControllerMVCGeoRef implements ActionListener {
                    System.out.println("\nCoordenadas Almacen "+almacen.getsIDAlmacen()+" ["+almacen.getX()+"]["+almacen.getY()+"]");
                }
                break;
-               
+           
+           // COORDENADAS DE TIENDAS
            case "Coordenadas de Tiendas" : 
                // Recogemos iterador de la LinkedList de Tiendas del Singleton
                Iterator itTiendas;
