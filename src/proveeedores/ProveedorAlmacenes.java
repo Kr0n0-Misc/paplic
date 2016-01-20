@@ -1,34 +1,29 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package proveeedores;
 
+// Entidades
 import entidades.DatoFichero;
 import entidades.RegistroFichero;
+// Entrada / Salida
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.Reader;
+// Utilidades
 import java.util.LinkedList;
 import java.util.StringTokenizer;
 
 /**
  *  ProveedorAlmacenes
  * 
- * @brief Clase proveedor para lectura de fichero de datos de almacenes
+ * Clase proveedor para lectura de fichero de datos de almacenes
  * @author Kr0n0
  */
 public class ProveedorAlmacenes {
-
     private final LinkedList<RegistroFichero> llLineasFichero;
     protected File fichero;
 
-    /******************************************
-    /  Constructor
-    *******************************************/
+    // CONSTRUCTOR
     public ProveedorAlmacenes(String ruta) {
         // Creamos una nueva lista para ir guardando las lineas del fichero
         llLineasFichero = new LinkedList<>();
@@ -56,8 +51,7 @@ public class ProveedorAlmacenes {
         // Cadenas y tokens
         String linea, sToken;
         StringTokenizer sTokenizer;
-        int indice = 0;
-        
+        int indice;
         try {
             // Mientras haya lineas en el fichero
             while ((linea = brEntrada.readLine()) != null) {
