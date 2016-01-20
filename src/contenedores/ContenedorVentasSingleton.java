@@ -53,7 +53,7 @@ public class ContenedorVentasSingleton {
      * @brief Devuelve la LinkedList de ventas
      * @return llVentas
      */
-    public LinkedList<Venta> getVe3ntas () {
+    public LinkedList<Venta> getVentas () {
         return llVentas;
     }
     

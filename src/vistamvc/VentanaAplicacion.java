@@ -97,8 +97,8 @@ public class VentanaAplicacion extends JFrame {
     private JMenu creaControlMenuMapas() {
 
         JMenuItem itemAA = new JMenuItem("Generar Mapa de Clientes");
-        JMenuItem itemAB = new JMenuItem("Generar Mapa Ventas");
         JMenuItem itemAC = new JMenuItem("Generar Mapa de Almacenes");
+        JMenuItem itemAB = new JMenuItem("Generar Mapa Ventas");
 
         JMenu menu = new JMenu("Opciones de Análisis");
         menu.add(itemAA);
