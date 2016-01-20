@@ -1,22 +1,26 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package validacionesdatos;
 
+// Entidades
 import entidades.Articulo;
+// Codificación
 import java.nio.charset.Charset;
 import java.nio.charset.CharsetEncoder;
 
 /**
+ * ValidarArticulo
+ * 
+ * Clase para validar los datos proporcionados de Artículo.
  *
+ * Comprueba si el campo es nulo o si es posible codificarlo en UTF-8
+ * como comprobaciones básicas.
+ * 
  * @author Kr0n0
  */
 public class ValidarArticulo {
     private boolean validar;
     static CharsetEncoder asciiEncoder;
 
+    // CONSTRUCTOR
     public ValidarArticulo() {
         this.validar = true;
         asciiEncoder = Charset.forName("UTF-8").newEncoder(); 
@@ -25,9 +29,9 @@ public class ValidarArticulo {
     /**
      * esValido
      * 
-     * @brief Valida los campos de la entidad
+     * Valida los campos de la entidad
      * @param articulo
-     * @return 
+     * @return boolean
      */
     public boolean esValido (Articulo articulo) {
         validar = (
@@ -39,12 +43,10 @@ public class ValidarArticulo {
         return validar;
     }
     
-      
     /**
      * esCampoValido
      * 
-     * Comprueba si el texto está en formato ASCII UTF-8 o si está vacío
-     * 
+     * Comprueba si el texto está en formato ASCII UTF-8 o si está vacío para descartarlo
      * @param campo
      * @return boolean
      */

@@ -1,22 +1,29 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package validacionesdatos;
 
+// Entidades
 import entidades.Venta;
+// Codificación
 import java.nio.charset.Charset;
 import java.nio.charset.CharsetEncoder;
 
 /**
+ * ValidarVenta
+ * 
+ * Clase para validar los datos proporcionados de Venta.
  *
+ * Comprueba si el campo es nulo o si es posible codificarlo en UTF-8
+ * como comprobaciones básicas.
+ * 
+ * El resto de comprobaciones (Cliente, Artículo, Tienda) se hacen en
+ * el controlador.
+ * 
  * @author Kr0n0
  */
 public class ValidarVenta {
     private boolean validar;
     static CharsetEncoder asciiEncoder;
 
+    // CONTROLLER
     public ValidarVenta() {
         this.validar = true;
         asciiEncoder = Charset.forName("UTF-8").newEncoder(); 
@@ -25,9 +32,9 @@ public class ValidarVenta {
     /**
      * esValido
      * 
-     * @brief Valida los campos de la entidad
+     * Valida los campos de la entidad
      * @param venta
-     * @return 
+     * @return boolean
      */
     public boolean esValido (Venta venta) {
         validar = (
@@ -38,11 +45,10 @@ public class ValidarVenta {
         return validar;
     }
     
-    
     /**
      * esCampoValido
      * 
-     * Comprueba si el texto está en formato ASCII UTF-8 o si está vacío
+     * Comprueba si el texto está en formato ASCII UTF-8 o si está vacío para descartarlo
      * 
      * @param campo
      * @return boolean
