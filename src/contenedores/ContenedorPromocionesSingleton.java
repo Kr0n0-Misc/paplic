@@ -7,35 +7,24 @@ import entidades.Promocion;
 /**
  * Contenedor Promociones - Singleton
  * 
- * 
- * @brief Contenedor de promociones en Singleton
+ * Contenedor de promociones utilizando patrón Singleton
  * @author Kr0n0
- * 
  */
 
 public class ContenedorPromocionesSingleton {
     private static ContenedorPromocionesSingleton  _instancia;
     private final LinkedList<Promocion> llPromociones;
     
-    /**********************************************************
-    * METODOS CONSTRUCTOR Y SINGLETON
-    ***********************************************************/
-    /**
-     * ContenedorPromocionesSingleton()
-     * 
-     * @brief Constructor de clase
-     */
+    // CONSTRUCTOR Y SINGLETON
     private ContenedorPromocionesSingleton() {
         llPromociones= new LinkedList();
     }
             
     /**
-     * getInstance() 
+     * getInstance
      * 
-     * Método estático
-     * 
-     * @brief Devuelve la instancia del singleton o la crea si no existe
-     * @return ContenedorPromocionesSingleton _instancia
+     * Devuelve la instancia del singleton o la crea si no existe
+     * @return ContenedorArticulosSingleton _instancia
      */
     public static ContenedorPromocionesSingleton getInstance() {
         if (_instancia==null){
@@ -44,13 +33,11 @@ public class ContenedorPromocionesSingleton {
         return _instancia;
     }
  
-    /**********************************************************
-    * METODOS ESPECIFICOS DE LA CLASE
-    ***********************************************************/
+    // METODOS PUBLICOS
     /**
-     * getPromociones()
+     * getPromociones
      * 
-     * @brief Devuelve la LinkedList de promociones
+     * Devuelve la LinkedList de promociones
      * @return llPromociones
      */
     public LinkedList<Promocion> getPromociones () {
@@ -58,9 +45,9 @@ public class ContenedorPromocionesSingleton {
     }
     
      /**
-     * addPromocion(Promocion p)
+     * addPromocion
      * 
-     * @brief Añade una promocion a la LinkedList 
+     * Añade una promocion a la LinkedList 
      * @param p Promocion
      */
     public void addPromocion(Promocion p) {
@@ -68,9 +55,9 @@ public class ContenedorPromocionesSingleton {
     }
     
     /**
-     * getNumPromociones()
+     * getNumPromociones
      * 
-     * @brief Método que devuelve el tamaño de la LinkedList de promociones
+     * Método que devuelve el tamaño de la LinkedList de promociones
      * @return int
      */
     public int getNumPromociones(){
@@ -78,10 +65,9 @@ public class ContenedorPromocionesSingleton {
     }
     
     /**
-     * getPromocion(String id)
+     * getPromocion
      * 
-     * 
-     * @brief Devuelve el objeto Promocion del ID pasado como parámetro
+     * Devuelve el objeto Promocion del ID pasado como parámetro
      * @param id identificador de promocion
      * @return  promocion si encontrado
      *          null si no encontrado
@@ -104,9 +90,9 @@ public class ContenedorPromocionesSingleton {
     }
     
      /**
-     * getPosPromocion(int i)
+     * getPosPromocion
      * 
-     * @brief Devuelve la promoción que está en la posición i
+     * Devuelve la promoción que está en la posición i
      * @param i posición de la promoción
      * @return Promocion
      */
@@ -114,10 +100,12 @@ public class ContenedorPromocionesSingleton {
         return llPromociones.get(i);
     }
     
-    /**********************************************************
-    * METODOS DE DEBUG / TRAZAS DE LA CLASE
-    ***********************************************************/
-    
+    // METODOS TRAZAS
+    /**
+     * dbgContenedorClientesSingleton
+     * 
+     * Muestra por consola los datos de las promociones
+     */
     public void dbgContenedorPromocionesSingleton() {
         Iterator<Promocion> i;
         Promocion promocion;

@@ -7,34 +7,23 @@ import entidades.Articulo;
 /**
  * Contenedor Artículos - Singleton
  * 
- * 
- * @brief Contenedor de artículos en Singleton
+ * @brief Contenedor de artículos utilizando patrón Singleton
  * @author Kr0n0
- * 
  */
 
 public class ContenedorArticulosSingleton {
     private static ContenedorArticulosSingleton  _instancia;
     private final LinkedList<Articulo> llArticulos;
     
-    /**********************************************************
-    * METODOS CONSTRUCTOR Y SINGLETON
-    ***********************************************************/
-    /**
-     * ContenedorArticulosSingleton()
-     * 
-     * @brief Constructor de clase
-     */
+    // CONSTRUCTOR Y SINGLETON
     private ContenedorArticulosSingleton() {
         llArticulos= new LinkedList();
     }
             
     /**
-     * getInstance() 
+     * getInstance
      * 
-     * Método estático
-     * 
-     * @brief Devuelve la instancia del singleton o la crea si no existe
+     * Devuelve la instancia del singleton o la crea si no existe
      * @return ContenedorArticulosSingleton _instancia
      */
     public static ContenedorArticulosSingleton getInstance() {
@@ -44,13 +33,11 @@ public class ContenedorArticulosSingleton {
         return _instancia;
     }
  
-    /**********************************************************
-    * METODOS ESPECIFICOS DE LA CLASE
-    ***********************************************************/
+    // METODOS PUBLICOS
     /**
-     * getArticulos()
+     * getArticulos
      * 
-     * @brief Devuelve la LinkedList de artículos
+     * Devuelve la LinkedList de artículos
      * @return llArticulos
      */
     public LinkedList<Articulo> getArticulos () {
@@ -58,9 +45,9 @@ public class ContenedorArticulosSingleton {
     }
     
      /**
-     * addArticulo(Articulo a)
+     * addArticulo
      * 
-     * @brief Añade un art`ículo a la LinkedList 
+     * Añade un art`ículo a la LinkedList 
      * @param a Articulo
      */
     public void addArticulo(Articulo a) {
@@ -68,9 +55,9 @@ public class ContenedorArticulosSingleton {
     }
     
     /**
-     * getNumArticulos()
+     * getNumArticulos
      * 
-     * @brief Método que devuelve el tamaño de la LinkedList de elementos
+     * Devuelve el tamaño de la LinkedList de elementos
      * @return int
      */
     public int getNumArticulos(){
@@ -78,10 +65,9 @@ public class ContenedorArticulosSingleton {
     }
     
     /**
-     * getArticulo(String id)
+     * getArticulo
      * 
-     * 
-     * @brief Devuelve el objeto Artículo del ID pasado como parámetro
+     * Devuelve el objeto Artículo del ID pasado como parámetro
      * @param id identificador de artículo
      * @return  artículo si encontrado
      *          null si no encontrado
@@ -104,9 +90,9 @@ public class ContenedorArticulosSingleton {
     }
     
      /**
-     * getPosArticulo(int i)
+     * getPosArticulo
      * 
-     * @brief Devuelve el artículo que está en la posición i
+     * Devuelve el artículo que está en la posición i
      * @param i posición del artículo
      * @return Artículo
      */
@@ -114,11 +100,12 @@ public class ContenedorArticulosSingleton {
         return llArticulos.get(i);
     }
     
-    /**********************************************************
-    * METODOS DE DEBUG / TRAZAS DE LA CLASE
-    ***********************************************************/
-    
-    
+    // METODOS TRAZAS
+    /**
+     * dbgContenedorArticulosSingleton
+     * 
+     * Muestra por consola los datos de los articulos
+     */
     public void dbgContenedorArticulosSingleton() {
         Iterator<Articulo> i;
         Articulo articulo;

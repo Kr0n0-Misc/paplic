@@ -7,35 +7,24 @@ import entidades.Tienda;
 /**
  * Contenedor Tiendas - Singleton
  * 
- * 
- * @brief Contenedor de tiendas en Singleton
+ * @brief Contenedor de tiendas utilizando patrón Singleton
  * @author Kr0n0
- * 
  */
 
 public class ContenedorTiendasSingleton {
     private static ContenedorTiendasSingleton  _instancia;
     private final LinkedList<Tienda> llTiendas;
     
-    /**********************************************************
-    * METODOS CONSTRUCTOR Y SINGLETON
-    ***********************************************************/
-    /**
-     * ContenedorTiendasSingleton()
-     * 
-     * @brief Constructor de clase
-     */
+    // CONSTRUCTOR Y SINGLETON
     private ContenedorTiendasSingleton() {
         llTiendas= new LinkedList();
     }
-            
+
     /**
      * getInstance() 
      * 
-     * Método estático
-     * 
-     * @brief Devuelve la instancia del singleton o la crea si no existe
-     * @return ContenedorTiendasSingleton _instancia
+     * Devuelve la instancia del singleton o la crea si no existe
+     * @return ContenedorArticulosSingleton _instancia
      */
     public static ContenedorTiendasSingleton getInstance() {
         if (_instancia==null){
@@ -44,13 +33,11 @@ public class ContenedorTiendasSingleton {
         return _instancia;
     }
  
-    /**********************************************************
-    * METODOS ESPECIFICOS DE LA CLASE
-    ***********************************************************/
+    // METODOS PUBLICOS
     /**
-     * getTiendas()
+     * getTiendas
      * 
-     * @brief Devuelve la LinkedList de tiendas
+     * Devuelve la LinkedList de tiendas
      * @return llTiendas
      */
     public LinkedList<Tienda> getTiendas () {
@@ -58,7 +45,7 @@ public class ContenedorTiendasSingleton {
     }
     
      /**
-     * addTienda(Tienda t)
+     * addTienda
      * 
      * @brief Añade una tienda a la LinkedList 
      * @param t Tienda
@@ -68,9 +55,9 @@ public class ContenedorTiendasSingleton {
     }
     
     /**
-     * getNumTiendas()
+     * getNumTiendas
      * 
-     * @brief Método que devuelve el tamaño de la LinkedList de tiendas
+     * Método que devuelve el tamaño de la LinkedList de tiendas
      * @return int
      */
     public int getNumTiendas(){
@@ -78,10 +65,9 @@ public class ContenedorTiendasSingleton {
     }
     
     /**
-     * getTienda(String id)
+     * getTienda
      * 
-     * 
-     * @brief Devuelve el objeto Tienda del ID pasado como parámetro
+     * Devuelve el objeto Tienda del ID pasado como parámetro
      * @param id identificador de tienda
      * @return  tienda si encontrado
      *          null si no encontrado
@@ -104,9 +90,9 @@ public class ContenedorTiendasSingleton {
     }
     
      /**
-     * getPosTienda(int i)
+     * getPosTienda
      * 
-     * @brief Devuelve la tienda que está en la posición i
+     * Devuelve la tienda que está en la posición i
      * @param i posición de la tienda
      * @return Tienda
      */
@@ -114,11 +100,12 @@ public class ContenedorTiendasSingleton {
         return llTiendas.get(i);
     }
     
-    /**********************************************************
-    * METODOS DE DEBUG / TRAZAS DE LA CLASE
-    ***********************************************************/
-    
-    
+    // METODOS TRAZAS
+    /**
+     * dbgContenedorTiendasSingleton
+     * 
+     * Muestra por consola los datos de las tiendas
+     */
     public void dbgContenedorTiendasSingleton() {
         Iterator<Tienda> i;
         Tienda tienda;

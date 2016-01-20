@@ -7,8 +7,7 @@ import entidades.Venta;
 /**
  * Contenedor Ventas - Singleton
  * 
- * 
- * @brief Contenedor de ventas en Singleton
+ * @brief Contenedor de ventas utilizando patrón Singleton
  * @author Kr0n0
  * 
  */
@@ -17,14 +16,7 @@ public class ContenedorVentasSingleton {
     private static ContenedorVentasSingleton  _instancia;
     private final LinkedList<Venta> llVentas;
     
-    /**********************************************************
-    * METODOS CONSTRUCTOR Y SINGLETON
-    ***********************************************************/
-    /**
-     * ContenedorVentasSingleton()
-     * 
-     * @brief Constructor de clase
-     */
+    // CONSTRUCTOR Y SINGLETON
     private ContenedorVentasSingleton() {
         llVentas= new LinkedList();
     }
@@ -32,10 +24,8 @@ public class ContenedorVentasSingleton {
     /**
      * getInstance() 
      * 
-     * Método estático
-     * 
-     * @brief Devuelve la instancia del singleton o la crea si no existe
-     * @return ContenedorVentasSingleton _instancia
+     * Devuelve la instancia del singleton o la crea si no existe
+     * @return ContenedorArticulosSingleton _instancia
      */
     public static ContenedorVentasSingleton getInstance() {
         if (_instancia==null){
@@ -44,13 +34,11 @@ public class ContenedorVentasSingleton {
         return _instancia;
     }
  
-    /**********************************************************
-    * METODOS ESPECIFICOS DE LA CLASE
-    ***********************************************************/
+    // METODOS PUBLICOS
     /**
-     * getVentas()
+     * getVentas
      * 
-     * @brief Devuelve la LinkedList de ventas
+     * Devuelve la LinkedList de ventas
      * @return llVentas
      */
     public LinkedList<Venta> getVentas () {
@@ -58,9 +46,9 @@ public class ContenedorVentasSingleton {
     }
     
      /**
-     * addVenta(Venta v)
+     * addVenta
      * 
-     * @brief Añade una venta a la LinkedList 
+     * Añade una venta a la LinkedList 
      * @param v Venta
      */
     public void addVenta(Venta v) {
@@ -68,9 +56,9 @@ public class ContenedorVentasSingleton {
     }
     
     /**
-     * getNumVentas()
+     * getNumVentas
      * 
-     * @brief Método que devuelve el tamaño de la LinkedList de ventas
+     * Método que devuelve el tamaño de la LinkedList de ventas
      * @return int
      */
     public int getNumVentas(){
@@ -78,10 +66,9 @@ public class ContenedorVentasSingleton {
     }
     
     /**
-     * getVenta(String id)
+     * getVenta
      * 
-     * 
-     * @brief Devuelve el objeto Venta del ID pasado como parámetro
+     * Devuelve el objeto Venta del ID pasado como parámetro
      * @param id identificador de venta
      * @return  venta si encontrado
      *          null si no encontrado
@@ -104,9 +91,9 @@ public class ContenedorVentasSingleton {
     }
     
      /**
-     * getPostVenta(int i)
+     * getPostVenta
      * 
-     * @brief Devuelve la venta que está en la posición i
+     * Devuelve la venta que está en la posición i
      * @param i posición de la venta
      * @return Venta
      */
@@ -114,10 +101,12 @@ public class ContenedorVentasSingleton {
         return llVentas.get(i);
     }
     
-    /**********************************************************
-    * METODOS DE DEBUG / TRAZAS DE LA CLASE
-    ***********************************************************/
-    
+    // METODOS TRAZAS
+    /**
+     * dbgContenedorVentasSingleton
+     * 
+     * Muestra por consola los datos de las ventas
+     */
     public void dbgContenedorVentasSingleton() {
         Iterator<Venta> i;
         Venta venta;

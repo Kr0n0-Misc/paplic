@@ -7,36 +7,24 @@ import entidades.Cliente;
 /**
  * Contenedor Clientes - Singleton
  * 
- * 
- * @brief Contenedor de clientes en Singleton
+ * @brief Contenedor de clientes utilizando patrón Singleton
  * @author Kr0n0
- * 
  */
 
 public class ContenedorClientesSingleton {
     private static ContenedorClientesSingleton  _instancia;
     private final LinkedList<Cliente> llClientes;
     
-    /**********************************************************
-    * METODOS CONSTRUCTOR Y SINGLETON
-    ***********************************************************/
-    
-    /**
-     * ContenedorClientesSingleton()
-     * 
-     * @brief Constructor de clase
-     */
+    // CONSTRUCTOR Y SINGLETON
     private ContenedorClientesSingleton() {
         llClientes= new LinkedList();
     }
             
     /**
-     * getInstance() 
+     * getInstance
      * 
-     * Método estático
-     * 
-     * @brief Devuelve la instancia del singleton o la crea si no existe
-     * @return ContenedorClientesSingleton _instancia
+     * Devuelve la instancia del singleton o la crea si no existe
+     * @return ContenedorArticulosSingleton _instancia
      */
     public static ContenedorClientesSingleton getInstance() {
         if (_instancia==null){
@@ -44,15 +32,12 @@ public class ContenedorClientesSingleton {
         }
         return _instancia;
     }
-    
-    /**********************************************************
-    * METODOS ESPECIFICOS DE LA CLASE
-    ***********************************************************/
 
+    // METODOS PUBLICOS
     /**
-     * getClientes()
+     * getClientes
      * 
-     * @brief Devuelve la LinkedList de clientes
+     * Devuelve la LinkedList de clientes
      * @return llClientes
      */
     public LinkedList<Cliente> getClientes () {
@@ -60,9 +45,9 @@ public class ContenedorClientesSingleton {
     }
     
     /**
-     * addCLiente(Cliente c)
+     * addCLiente
      * 
-     * @brief Añade un cliente a la LinkedList 
+     * Añade un cliente a la LinkedList 
      * @param c Cliente
      */
     public void addCliente(Cliente c) {
@@ -70,9 +55,9 @@ public class ContenedorClientesSingleton {
     }
     
     /**
-     * getNumClientes()
+     * getNumClientes
      * 
-     * @brief Método que devuelve el tamaño de la LinkedList de elementos
+     * Método que devuelve el tamaño de la LinkedList de elementos
      * @return int
      */
     public int getNumClientes(){
@@ -80,10 +65,9 @@ public class ContenedorClientesSingleton {
     }
     
     /**
-     * getCliente(String id)
+     * getCliente
      * 
-     * 
-     * @brief Devuelve el objeto Cliente del ID pasado como parámetro
+     * Devuelve el objeto Cliente del ID pasado como parámetro
      * @param id identificador de cliente
      * @return  cliente si encontrado
      *          null si no encontrado
@@ -106,9 +90,9 @@ public class ContenedorClientesSingleton {
     }
     
     /**
-     * getPosCliente(int i)
+     * getPosCliente
      * 
-     * @brief Devuelve el cliente que está en la posición i
+     * Devuelve el cliente que está en la posición i
      * @param i posición del cliente
      * @return Cliente
      */
@@ -116,10 +100,12 @@ public class ContenedorClientesSingleton {
         return llClientes.get(i);
     }
     
-    /**********************************************************
-    * METODOS DE DEBUG / TRAZAS DE LA CLASE
-    ***********************************************************/
-
+    // METODOS TRAZAS
+    /**
+     * dbgContenedorClientesSingleton
+     * 
+     * Muestra por consola los datos de los clientes
+     */
     public void dbgContenedorClientesSingleton() {
         Iterator<Cliente> i;
         Cliente cliente;

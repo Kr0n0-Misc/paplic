@@ -7,34 +7,23 @@ import entidades.Almacen;
 /**
  * Contenedor Almacen - Singleton
  * 
- * 
- * @brief Contenedor de almacenes en Singleton
+ * Contenedor de almacenes utilizando patrón Singleton
  * @author Kr0n0
- * 
  */
 
 public class ContenedorAlmacenesSingleton {
     private static ContenedorAlmacenesSingleton  _instancia;
     private final LinkedList<Almacen> llAlmacenes;
     
-    /**********************************************************
-    * METODOS CONSTRUCTOR Y SINGLETON
-    ***********************************************************/
-    /**
-     * ContenedorArticulosSingleton()
-     * 
-     * @brief Constructor de clase
-     */
+    // CONSTRUCTOR Y SINGLETON
     private ContenedorAlmacenesSingleton() {
         llAlmacenes= new LinkedList();
     }
             
     /**
-     * getInstance() 
+     * getInstance
      * 
-     * Método estático
-     * 
-     * @brief Devuelve la instancia del singleton o la crea si no existe
+     * Devuelve la instancia del singleton o la crea si no existe
      * @return ContenedorArticulosSingleton _instancia
      */
     public static ContenedorAlmacenesSingleton getInstance() {
@@ -44,13 +33,11 @@ public class ContenedorAlmacenesSingleton {
         return _instancia;
     }
  
-    /**********************************************************
-    * METODOS ESPECIFICOS DE LA CLASE
-    ***********************************************************/
+    // METODOS PUBLICOS
     /**
-     * getAlmacenes()
+     * getAlmacenes
      * 
-     * @brief Devuelve la LinkedList de almacenes
+     * Devuelve la LinkedList de almacenes
      * @return llArticulos
      */
     public LinkedList<Almacen> getAlmacenes () {
@@ -58,9 +45,9 @@ public class ContenedorAlmacenesSingleton {
     }
     
      /**
-     * addAlmacen(Almacen a)
+     * addAlmacen
      * 
-     * @brief Añade un almacen a la LinkedList 
+     * Añade un almacen a la LinkedList 
      * @param a Almacen
      */
     public void addAlmacen(Almacen a) {
@@ -68,9 +55,9 @@ public class ContenedorAlmacenesSingleton {
     }
     
     /**
-     * getNumAlmacenes()
+     * getNumAlmacenes
      * 
-     * @brief Método que devuelve el tamaño de la LinkedList de almacenes
+     * Devuelve el tamaño de la LinkedList de almacenes
      * @return int
      */
     public int getNumAlmacenes(){
@@ -78,10 +65,9 @@ public class ContenedorAlmacenesSingleton {
     }
     
     /**
-     * getAlmacen(String id)
+     * getAlmace
      * 
-     * 
-     * @brief Devuelve el objeto Almacen del ID pasado como parámetro
+     * Devuelve el objeto Almacen del ID pasado como parámetro
      * @param id identificador de almacen
      * @return  almacen si encontrado
      *          null si no encontrado
@@ -106,7 +92,7 @@ public class ContenedorAlmacenesSingleton {
      /**
      * getPosAlmacen(int i)
      * 
-     * @brief Devuelve el almacen que está en la posición i
+     * Devuelve el almacen que está en la posición i
      * @param i posición del almacen
      * @return Almacen
      */
@@ -114,10 +100,12 @@ public class ContenedorAlmacenesSingleton {
         return llAlmacenes.get(i);
     }
     
-    /**********************************************************
-    * METODOS DE DEBUG / TRAZAS DE LA CLASE
-    ***********************************************************/
-    
+    // METODOS TRAZAS
+    /**
+     * dbgContenedorAlmacenesSingleton
+     * 
+     * Muestra por consola los datos de los almacenes
+     */
     public void dbgContenedorAlmacenesSingleton() {
         Iterator<Almacen> i;
         Almacen almacen;
@@ -128,7 +116,7 @@ public class ContenedorAlmacenesSingleton {
         while (i.hasNext()) {
             // Recuperamos el almacen 
             almacen = (Almacen) i.next();
-            // Imprimimos los datos del almacen en System.out
+            // Mostramos los datos del almacen
             System.out.println("\n");
             System.out.println("IDAlmacen : " + almacen.getsIDAlmacen() 
                     + "\nCalle : " + almacen.getsCalle() 
