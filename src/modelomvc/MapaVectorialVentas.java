@@ -25,33 +25,43 @@ import javax.imageio.ImageIO;
 
 // NOTA Implementa IMapaRepresentarAsociacion para poder pasar como parametros entidad y entidad2!!
 public class MapaVectorialVentas extends MapaVectorialBase implements IMapaRepresentarAsociacion {
-
+    protected LinkedList<Line2D> llLineas; //Lineas
+    protected LinkedList<Shape> llTiendas; //Tiendas
+    protected Shape sCliente, sTienda; // Shapes
+    
     public MapaVectorialVentas() {
         super();
+        llLineas = new LinkedList<>();
+        llTiendas = new LinkedList<>();
         //incializar contexto de dibujo
-       grafico2d.setPaint(Color.red);//color de la línea rojo
+        //grafico2d.setPaint(Color.red);//color de la línea rojo
     }
 
     // Añadimos segunda entidad para representar ventas entre los dos puntos
+    //  geometrias -> LinkedList<Shape> básica para Clientes
+    //  llTiendas -> LinkedList<Shape> básica para Tiendas
+    //  llLineas -> LinkedList<Line2D> básica para Lineas
+    //  DEFINIMOS DOS LINKEDLIST DE SHAPE PARA PODER TRATARLOS DE MANERA DIFERENTE EN COLOR
+    //
     // NOTA : geometrias es LinkedList<Shape>, por lo que los puntos no pueden
-    // añadirse
+    // añadirse y es necesario crear una nueva
     @Override
     public boolean representar(EntidadGeo entidad, EntidadGeo entidad2) {
         // Crear tipo de geometría  y asignar posición (x,y)        
         // Rectangulos
-        Rectangle cuadrado1 = new Rectangle(entidad.getX(),entidad.getY(), 10, 10);
-        Rectangle cuadrado2 = new Rectangle(entidad2.getX(), entidad2.getY(), 10, 10);
+        Rectangle rCliente = new Rectangle(entidad.getX(),entidad.getY(), 10, 10);
+        Rectangle rTienda = new Rectangle(entidad2.getX(), entidad2.getY(), 10, 10);
         // Puntos
         Point2D punto1 = new Point2D.Float(entidad.getX(), entidad.getY());
         Point2D punto2 = new Point2D.Float(entidad2.getX(), entidad2.getY());
         // Linea entre puntos
         Line2D linea = new Line2D.Float(punto1,punto2);
         
-        geometrias.add(cuadrado1);
-        geometrias.add(cuadrado2);
-       // geometrias.add(punto1);
-       // geometrias.add(punto2);
-        geometrias.add(linea);
+        geometrias.add(rCliente);
+        llTiendas.add(rTienda);
+//        geometrias.add(punto1);
+//        geometrias.add(punto2);
+        llLineas.add(linea);
         
         return true;
     }
@@ -59,9 +69,37 @@ public class MapaVectorialVentas extends MapaVectorialBase implements IMapaRepre
     @Override
     public void generarGrafico() {
         //Por cada geometria operación draw en la coordenadas asinadas
-        Iterator itGeometrias;
+        Iterator itGeometrias, itTiendas, itLineas;
         itGeometrias = geometrias.iterator();
-        while (itGeometrias.hasNext()) grafico2d.draw((Rectangle)itGeometrias.next());
+        itTiendas = llTiendas.iterator();
+        itLineas = llLineas.iterator();    
+        
+        // Dibujamos las lineas primero (azul)
+        grafico2d.setColor(Color.blue);
+        while (itLineas.hasNext())
+            grafico2d.draw((Line2D)itLineas.next());
+        
+        // Dibujamos los clientes despues (rojo con fill)
+        grafico2d.setColor(Color.red);
+        while (itGeometrias.hasNext()) {
+            // Recogemos el objeto
+            sCliente = (Shape)itGeometrias.next();
+            // Dibujamos y rellenamos
+            grafico2d.draw(sCliente);
+            grafico2d.fill(sCliente);
+        }
+        
+        // Dibujamos por ultimo las tiendas (verde con fill)
+        grafico2d.setColor(Color.green);
+        while (itTiendas.hasNext()) {
+            // Recogemos el objeto
+            sTienda = (Shape) itTiendas.next();
+            // Dibujamos y rellenamos
+            grafico2d.draw(sTienda);
+            grafico2d.fill(sTienda);
+        }
+        
+
         /*
         Rectangle cuadrado1 = new Rectangle(20,20, 20, 20);        
         grafico2d.draw(cuadrado1);
