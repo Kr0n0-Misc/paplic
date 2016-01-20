@@ -14,9 +14,9 @@ public class Venta extends EntidadGeo {
    //private String sIDAlmacen, sCalle, sNum, sCodPost, sTelf, sPoblacion, sProvincia;
    private String sIDVenta, sUnidades, sImporte, sFecha;
    private Cliente cCliente;
-   private Almacen aAlmacen;
+   private Articulo aArticulo;
    private Tienda tTienda;
-   private String sIDCliente, sIDAlmacen, sIDTienda;
+   private String sIDCliente, sIDArticulo, sIDTienda;
 
     /******************************************
     /  Constructor
@@ -25,31 +25,23 @@ public class Venta extends EntidadGeo {
        super();
    }
 
+   // Constructor para crear Tienda, Cliente y Producto dependientes
+   public Venta(Tienda tienda, Cliente cliente, Articulo articulo) {
+       this.setsIDTienda(tienda.getsIDTienda());
+       this.setsIDCliente(cliente.getsIDCliente());
+       this.setsIDArticulo(articulo.getsIDArticulo());
+   }
+
     /*************************************************
     /  Getters y Setters para las clases dependientes
     **************************************************/
+   // CLIENTE
     public Cliente getcCliente() {
         return cCliente;
     }
 
     public void setcCliente(Cliente cCliente) {
         this.cCliente = cCliente;
-    }
-
-    public Almacen getaAlmacen() {
-        return aAlmacen;
-    }
-
-    public void setaAlmacen(Almacen aAlmacen) {
-        this.aAlmacen = aAlmacen;
-    }
-
-    public Tienda gettTienda() {
-        return tTienda;
-    }
-
-    public void settTienda(Tienda tTienda) {
-        this.tTienda = tTienda;
     }
 
     public String getsIDCliente() {
@@ -59,13 +51,31 @@ public class Venta extends EntidadGeo {
     public void setsIDCliente(String sIDCliente) {
         this.sIDCliente = sIDCliente;
     }
-
-    public String getsIDAlmacen() {
-        return sIDAlmacen;
+    
+    // ARTICULO
+    public Articulo getaArticulo() {
+        return aArticulo;
     }
 
-    public void setsIDAlmacen(String sIDAlmacen) {
-        this.sIDAlmacen = sIDAlmacen;
+    public void setaArticulo(Articulo aArticulo) {
+        this.aArticulo = aArticulo;
+    }
+
+    public String getsIDArticulo() {
+        return sIDArticulo;
+    }
+
+    public void setsIDArticulo(String sIDArticulo) {
+        this.sIDArticulo = sIDArticulo;
+    }
+    
+    // TIENDA
+    public Tienda gettTienda() {
+        return tTienda;
+    }
+
+    public void settTienda(Tienda tTienda) {
+        this.tTienda = tTienda;
     }
 
     public String getsIDTienda() {
@@ -78,7 +88,7 @@ public class Venta extends EntidadGeo {
 
     
     /******************************************
-    /  Getters y Setters para los atributos
+    /  Getters y Setters para resto de atributos
     *******************************************/
     public String getsIDVenta() {
         return sIDVenta;
@@ -128,7 +138,7 @@ public class Venta extends EntidadGeo {
                 this.setsIDCliente(valor);
                 break;
             case 2 : //IDA
-                this.setsIDAlmacen(valor);
+                this.setsIDArticulo(valor);
                 break;
             case 3 : //IDT
                 this.setsIDTienda(valor);
