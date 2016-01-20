@@ -1,36 +1,47 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package modelomvc;
 
+// Entidades
 import entidades.EntidadGeo;
+// Swing, AWT y vistas
 import java.awt.Color;
+import java.awt.Rectangle;
+import java.awt.Shape;
+// Utilidades
+import java.util.Iterator;
+/* NO SON NECESARIAS
 import java.awt.Graphics2D;
 import java.awt.Image;
-import java.awt.Rectangle;
 import java.awt.RenderingHints;
-import java.awt.Shape;
 import java.awt.geom.Rectangle2D;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
-import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.imageio.ImageIO;
+*/
 
-
+/**
+ * MapaVectorialAlmacenes
+ * 
+ * Clase que gestiona el Mapa Vectorial de Almacenes
+ * Hereda de MapaVectorialBase
+ * Implementa Interfaz IMapaRepresentarEntidad
+ * 
+ * @author Kr0n0
+ */
 public class MapaVectorialAlmacenes extends MapaVectorialBase implements IMapaRepresentarEntidad {
     Shape sAlmacen;
     
+    // CONSTRUCTOR
     public MapaVectorialAlmacenes() {
         super();
         //incializar contexto de dibujo
        grafico2d.setPaint(Color.red);//color de la línea rojo
     }
 
+    // OVERRIDE A METODO REPRESENTAR DEL INTERFAZ IMapaRepresentarEntidad
     @Override
     public boolean representar(EntidadGeo entidad) {
         // Crear tipo de geometría  y asignar posición (x,y)        
@@ -39,6 +50,7 @@ public class MapaVectorialAlmacenes extends MapaVectorialBase implements IMapaRe
         return true;
     }
 
+    // OVERRIDE A METODO GENERARGRAFICO DE LA CLASE ABSTRACTA MapaVectorialBase
     @Override
     public void generarGrafico() {
         grafico2d.setColor(Color.magenta);
@@ -51,9 +63,6 @@ public class MapaVectorialAlmacenes extends MapaVectorialBase implements IMapaRe
             // Dibujamos y rellenamos
             grafico2d.draw(sAlmacen);
             grafico2d.fill(sAlmacen);
-        }        /*
-        Rectangle cuadrado1 = new Rectangle(20,20, 20, 20);        
-        grafico2d.draw(cuadrado1);
-        */
+        } 
     }
 }
