@@ -41,9 +41,10 @@ public class ControllerMVCMapaVentas implements ActionListener {
             itVentas = ContenedorVentasSingleton.getInstance().getVentas().iterator();
             // Iteramos en la lista
             while (itVentas.hasNext()) {
-            //Recogemos el objeto Cliente
+            //Recogemos el objeto Venta
             venta = (Venta) itVentas.next();
-            mapaventas.representar(venta);
+            // Representamos usando el mapa de ventas con dos parámetros : cliente y tienda          
+            mapaventas.representar(venta.getcCliente(), venta.gettTienda());
             //2.-Procesar y confifurar el mapa con la colección de figuras geometricas
             mapaventas.generarGrafico(); //Generar el mapa
             
